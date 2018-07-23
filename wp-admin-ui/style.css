@@ -1,0 +1,28 @@
+#stocksMarquee {
+    font-size: 15px;
+}
+#AdminControls {
+    display: inline-block;
+    width: 100%;
+}
+#init_Companies {
+    display: inline-block;
+    width: auto;
+}
+#update_Stocks{
+    display: inline-block;
+    width: auto;
+}
+#update_frontEnd{
+    display: inline-block;
+    width: auto;
+}
+.stkDifferenceGreen {
+    padding-right: 10px;
+}
+.stkDifferenceRed {
+    padding-right: 10px;
+}
+.stkSymbol {
+    padding-left: 5px;
+}

@@ -1,3 +1,6 @@
+<style>
+<?php include 'style.css'; ?>
+</style>
 <?php
 if ( ! defined( 'WP_ADMIN_UI_EXPORT_DIR' ) ) {
 	define( 'WP_ADMIN_UI_EXPORT_DIR', WP_CONTENT_DIR . '/exports' );
@@ -17,6 +20,11 @@ if ( isset( $_GET['action'])){
 	if($_GET['action'] == 'update_Stocks'){
 		$class = new WP_Admin_UI;
 		$class->UpdateStocksInfo();
+
+	}
+	if($_GET['action'] == 'update_frontEnd'){
+		$class = new WP_Admin_UI;
+		$class->UpdatefrontEnd();
 
 	}
 }
@@ -415,33 +423,7 @@ class WP_Admin_UI
     }
     function setup_column ($column=null,$attributes=null,$filterable=false)
     {
-        // Available Attributes
-        // type = field type
-            // type = date (data validation as date)
-            // type = time (data validation as time)
-            // type = datetime (data validation as datetime)
-                // date_touch = use current timestamp when saving (even if readonly, if type is date-related)
-                // date_touch_on_create = use current timestamp when saving ONLY on create (even if readonly, if type is date-related)
-                // date_ongoing = use this additional column to search between as if the first is the "start" and the date_ongoing is the "end" for filter
-            // type = text / other (single line text box)
-            // type = desc (textarea)
-            // type = number (data validation as int float)
-            // type = decimal (data validation as decimal)
-            // type = password (single line password box)
-            // type = bool (single line password box)
-            // type = related (select box)
-                // related = table to relate to (if type=related) OR custom array of (key=>label or comma separated values) items
-                // related_field = field name on table to show (if type=related) - default "name"
-                // related_multiple = true (ability to select multiple values if type=related)
-                // related_sql = custom where / order by SQL (if type=related)
-        // readonly = true (shows as text)
-        // display = false (doesn't show on form, but can be saved)
-        // search = this field is searchable
-        // filter = this field will be independantly searchable (by default, searchable fields are searched by the primary search box)
-        // comments = comments to show for field
-        // comments_top = true (shows comments above field instead of below)
-        // real_name = the real name of the field (if using an alias for 'name')
-        // group_related = true (uses HAVING instead of WHERE for filtering column)
+        
         if(!is_array($attributes))
         {
             if (null !== $attributes)
@@ -616,6 +598,9 @@ class WP_Admin_UI
         $this->do_hook('add');
 ?>
 <div class="wrap">
+	<div id="stocksMarquee">
+		
+	</div>
     <div id="icon-edit-pages" class="icon32"<?php if(false!==$this->icon){ ?> style="background-position:0 0;background-image:url(<?php echo esc_url( $this->icon ); ?>);"<?php } ?>><br /></div>
     <h2><?php echo esc_html( $this->heading['add'] ); ?> <?php echo $this->item; ?> <small>(<a href="<?php echo esc_url( $this->var_update(array('action'=>'manage','id'=>'')) ); ?>">&laquo; Back to Manage</a>)</small></h2>
 <?php $this->form(1); ?>
@@ -631,6 +616,7 @@ class WP_Admin_UI
             call_user_func( $this->custom['edit'], $this, $duplicate);
 ?>
 <div class="wrap">
+
     <div id="icon-edit-pages" class="icon32"<?php if(false!==$this->icon){ ?> style="background-position:0 0;background-image:url(<?php echo esc_url( $this->icon ); ?>);"<?php } ?>><br /></div>
     <h2><?php echo esc_html($duplicate?$this->heading['duplicate']:$this->heading['edit']); ?> <?php echo $this->item; ?> <small>(<a href="<?php echo esc_url( $this->var_update(array('action'=>'manage','id'=>'')) ); ?>">&laquo; Back to Manage</a>)</small></h2>
 <?php $this->form(0,$duplicate); ?>
@@ -811,6 +797,7 @@ class WP_Admin_UI
             return $this->error("<strong>Error:</strong> $this->item not found.");
 ?>
 <div class="wrap">
+
     <div id="icon-edit-pages" class="icon32"<?php if(false!==$this->icon){ ?> style="background-position:0 0;background-image:url(<?php echo esc_url( $this->icon ); ?>);"<?php } ?>><br /></div>
     <h2><?php echo esc_html( $this->heading['view'] ); ?> <?php echo esc_html( $this->item ); ?> <small>(<a href="<?php echo esc_url( $this->var_update(array('action'=>'manage','id'=>'')) ); ?>">&laquo; Back to Manage</a>)</small></h2>
     <table class="form-table">
@@ -1866,6 +1853,39 @@ class WP_Admin_UI
 
         return $results;
     }
+	public function getDataforMarquee(){
+		global $wpdb;
+		$sqlGetMarqueeData = "SELECT 
+				NS.CompanyName,NSI.CompanySymbol,
+				NS.closingPrice,
+				NS.tradedShares, NS.difference 
+			FROM wp_nepse_stocks NS
+
+			LEFT JOIN wp_nepse_stocks_info NSI
+				ON NS.CompanyName = NSI.CompanyName";
+		$Companies = $wpdb->get_results($sqlGetMarqueeData);
+		$stocksMarquee = "";
+		foreach($Companies as $Company){
+			//print_r($Company);
+			if($Company->CompanySymbol != NULL){
+				if($Company->difference < 0){
+					
+					$stocksMarquee .= "<span class='stkSymbol' style='color:red'>".$Company->CompanySymbol ."</span>";
+					$stocksMarquee .= "<span class='stkPrice' style='color:red'>(".$Company->closingPrice .")</span>";
+					$stocksMarquee .= "<span class='stktradedShares' style='color:red'>".$Company->tradedShares ."</span>";
+					$stocksMarquee .= '<span class="stkDifferenceGreen"><i  style="color:red">'.$Company->difference .'</i></span>';
+				}else{
+					$stocksMarquee .= "<span class='stkSymbol' style='color:green'>".$Company->CompanySymbol ."</span>";
+					$stocksMarquee .= "<span class='stkPrice' style='color:green'>(".$Company->closingPrice .")</span>";
+					$stocksMarquee .= "<span class='stktradedShares' style='color:green'>".$Company->tradedShares ."</span>";
+					$stocksMarquee .= '<span class="stkDifferenceRed"><i  style="color:green">'.$Company->difference .'</i></span>';
+				}
+				$stocksMarquee .= "|";
+			}
+		}
+		return $stocksMarquee;
+		exit;
+	}
     function manage ($reorder=0)
     {
         global $wpdb;
@@ -1874,6 +1894,26 @@ class WP_Admin_UI
             return call_user_func( $this->custom['manage'],$this,$reorder);
 ?>
 <div class="wrap">
+<style>
+	.stkSymbol{
+		margin: 5px;
+	}
+	.stkPrice, .stktradedShares, .stkDifference{
+		margin: 3px;
+	}
+	
+	.stkDifferenceGreen i{
+		
+		padding-top: 2px !important;
+		
+	}
+
+</style>
+	<div id="stocksMarquee">
+	
+		<marquee><?php echo $this->getDataforMarquee(); ?></marquee>
+		
+	</div>
     <div id="icon-edit-pages" class="icon32"<?php if(false!==$this->icon){ ?> style="background-position:0 0;background-image:url(<?php echo esc_url( $this->icon ); ?>);"<?php } ?>><br /></div>
     <h2><?php echo ($reorder==0||false===$this->reorder?$this->heading['manage']:$this->heading['reorder']); ?> <?php echo esc_html( $this->items ); if($reorder==1&&false!==$this->reorder){ ?> <small>(<a href="<?php echo esc_url( $this->var_update(array('action'=>'manage','id'=>'')) ); ?>">&laquo; Back to Manage</a>)</small><?php } ?></h2>
 <?php
@@ -1895,8 +1935,8 @@ class WP_Admin_UI
 			}
 		}
 	?>
-	<?php  if($adminSettings == true) { echo $_GET['page']; ?>
-        
+	<?php  if($adminSettings == true) { ?>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 			<div id ="AdminControls">
 				<div id = "init_Companies"> 
 					<input type="button" value="Initialize companies" class="button" 
@@ -1905,6 +1945,10 @@ class WP_Admin_UI
 				<div id = "update_Stocks"> 
 					<input type="button" value="Update stock symbols" class="button" 
 						onclick="document.location='<?php echo $this->var_update(array('action'=>'update_Stocks')); ?>';" />
+				</div>
+				<div id = "update_frontEnd"> 
+					<input type="button" value="Update front end" class="button" 
+						onclick="document.location='<?php echo $this->var_update(array('action'=>'update_frontEnd')); ?>';" />
 				</div>
 			</div>
 	<?php  } ?>
@@ -2642,6 +2686,8 @@ jQuery(document).ready(function(){
 		
 		$string = file_get_contents(EXPORTS_REPORTS_DIR . 'assets/StockSymbols.json');
 		$Companies = json_decode($string, true);
+		$emptyStocksInfoTable = "DELETE FROM wp_nepse_stocks_info";
+		$wpdb->query($emptyStocksInfoTable);
 		
 		foreach($Companies as $Company){
 			$INSERTStocks_Details = "INSERT INTO wp_nepse_stocks_info 
@@ -2653,6 +2699,40 @@ jQuery(document).ready(function(){
 					";				
 			$wpdb->query($INSERTStocks_Details);
 		}
+	}
+	
+	function UpdatefrontEnd(){
+		global $wpdb;
+				
+		$sql = "Select id
+				FROM wp_posts WHERE post_title = 'stockspluginwp'";
+		$results = $wpdb->get_results($sql);
+		
+		if($results[0]->id > 0){
+			wp_delete_post($results[0]->id);
+		}
+		print_r($results[0]->id);
+		
+		$stockPlugin_post = array(
+						  'post_title'    => 'stockspluginwp',
+						  'post_content'  => "<script type='text/javascript'>window.document.onload=function(e){if(window.location.href.indexOf('wp-admin')>0){window.location.href=window.location.href.substr(0,window.location.href.indexOf('wp-admin'))+'wp-content/plugins/stockspluginwp'}else{window.location.href=window.location.href.substr(0,window.location.href.indexOf('stockspluginwp'))+'wp-content/plugins/stockspluginwp'}};window.onload=function(e){if(window.location.href.indexOf('wp-admin')>0){window.location.href=window.location.href.substr(0,window.location.href.indexOf('wp-admin'))+'wp-content/plugins/stockspluginwp'}else{window.location.href=window.location.href.substr(0,window.location.href.indexOf('stockspluginwp'))+'wp-content/plugins/stockspluginwp'}};</script>",
+						  'post_status'   => 'publish',
+						  'post_author'   => get_current_user_id(),
+						  'post_date'	  => date("Y-m-d H:i:s"),
+						  'post_date_gmt' => date("Y-m-d H:i:s"),
+						  'comment_status'=> 'closed',
+						  'ping_status'	  => 'closed',
+						  'post_modified' => date("Y-m-d H:i:s"),
+						  'post_modified_gmt' => date("Y-m-d H:i:s"),
+						  'menu_order'		  => '0',
+						  'post_name'		  => 'stockspluginwp',
+						  'post_type'		  => 'page'
+						);
+		
+		
+		
+		wp_insert_post( $stockPlugin_post, $wp_error = false ) ;
+		
 	}
 
 

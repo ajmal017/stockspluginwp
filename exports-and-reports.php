@@ -156,7 +156,7 @@ function exports_reports_init() {
 		}
 	}
 	
-	UpdateTableStocks();
+	//UpdateTableStocks();
 	
 	
 	
@@ -175,36 +175,37 @@ function UpdateTableStocks(){
 	$content = file_get_contents($url);
 	$json = json_decode($content,true);
 	$data = $json;
-
-	/*for getting data from table*/
-	foreach($data as $row){
-		
-		$companyName = $row['companyName'];
-		
-		$noOfTransactions =$row['noOfTransactions'];
-		$difference = $row['difference'];
-		$maxPrice = $row['maxPrice'];
-		$tradedShares = $row['tradedShares'];
-		$closingPrice =$row['closingPrice'];
-		$minPrice =$row['minPrice'];
-		
-		$checkIfStockExists = "SELECT CompanyName FROM wp_nepse_stocks WHERE CompanyName = '".$companyName."'";
-		$result = $wpdb->get_results($checkIfStockExists);
-		
-		$UPDATEStocks = "UPDATE  wp_nepse_stocks 
-							SET CompanyName  = '".$companyName."',
-								
-								transactions = ".$noOfTransactions.",
-								difference	 = ".$difference.",
-								maxPrice	 = ".$maxPrice.",
-								tradedShares = ".$tradedShares."
-						WHERE 
-							CompanyName = '".$companyName."';";
-						
-		$wpdb->query($UPDATEStocks);
-		
+	
+	if (!empty($data)){
+		/*for getting data from table*/
+		foreach($data as $row){
+			$companyName = $row['companyName'];
+			
+			$noOfTransactions =$row['noOfTransactions'];
+			$difference = $row['difference'];
+			$maxPrice = $row['maxPrice'];
+			$tradedShares = $row['tradedShares'];
+			$closingPrice =$row['closingPrice'];
+			$minPrice =$row['minPrice'];
+			
+			$checkIfStockExists = "SELECT CompanyName FROM wp_nepse_stocks WHERE CompanyName = '".$companyName."'";
+			$result = $wpdb->get_results($checkIfStockExists);
+			
+			$UPDATEStocks = "UPDATE  wp_nepse_stocks 
+								SET CompanyName  = '".$companyName."',
+									
+									transactions = ".$noOfTransactions.",
+									difference	 = ".$difference.",
+									maxPrice	 = ".$maxPrice.",
+									tradedShares = ".$tradedShares."
+							WHERE 
+								CompanyName = '".$companyName."';";
+							
+			$wpdb->query($UPDATEStocks);
+		}
 		
 	}
+	
 }
 /**
  *
@@ -343,6 +344,7 @@ function exports_reports_settings() {
 	$api_url = EXPORTS_REPORTS_URL . 'api.php?report=YOUR_REPORT_ID%s&token=' . get_option( 'exports_reports_token' );
 	?>
 	<div class="wrap">
+		
 		<div id="icon-edit-pages" class="icon32" style="background-position:0 0;background-image:url(<?php echo EXPORTS_REPORTS_URL; ?>assets/icons/32.png);">
 			<br /></div>
 		<h2>Exports and Reports - Settings</h2>
@@ -405,14 +407,6 @@ function exports_reports_settings() {
 						<span class="description">This will clear all groups / reports and remove all files from your Exports directory too - <?php echo esc_html( str_replace( ABSPATH, '', WP_ADMIN_UI_EXPORT_DIR ) ); ?></span>
 					</td>
 				</tr>
-				<!--
-				<tr valign="top">
-					<th scope="row"><label for=""></label></th>
-					<td>
-						<input name="" type="text" id="" value="0" class="small-text" />
-						<span class="description"></span>
-					</td>
-				</tr>-->
 			</table>
 			<p class="submit">
 				<input type="submit" name="Submit" class="button-primary" value="Save Settings" />
@@ -876,7 +870,7 @@ function exports_reports_report_field( $column, $attributes, $obj ) {
 										<div>Ongoing Default Filter Value (optional)</div>
 										<input type="text" name="field_filter_ongoing_default[<?php echo esc_attr( $count ); ?>]" value="<?php echo esc_attr( $field['filter_ongoing_default'] ); ?>" class="medium-text" />
 									</td>
-									<td><!--<div>Total Field?</div> Yes <input type="radio" name="field_total_field[<?php echo esc_attr( $count ); ?>]" value="1" class="medium-text"<?php echo( $field['total_field'] == 1 ? ' CHECKED' : '' ); ?> />&nbsp;&nbsp; No<input type="radio" name="field_total_field[<?php echo esc_attr( $count ); ?>]" value="0" class="medium-text"<?php echo( $field['total_field'] != 1 ? ' CHECKED' : '' ); ?> />--></td>
+									<td></td>
 								</tr>
 								<tr>
 									<td>
