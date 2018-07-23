@@ -233,20 +233,6 @@ class WP_Admin_UI
 <?php
         }
     }
-    /*
-    // Example code for use with $this->do_hook
-    function my_filter_function ($args,$obj)
-    {
-        $obj[0]->item = 'Post';
-        $obj[0]->add = true;
-        // args are an array (0=>$arg1,1=>$arg2)
-        // may have more than one arg, dependant on filter
-        return $args;
-    }
-    add_filter('wp_admin_ui_post_init','my_filter_function',10,2);
-    // OR
-    
-    */
     function do_hook ()
     {
         $args = func_get_args();
@@ -1814,6 +1800,22 @@ class WP_Admin_UI
             echo "<textarea cols='130' rows='30'>" . esc_textarea( $sql ) . "</textarea>";
         if(false!==$this->default_none&&false===$this->search_query&&false===$full&&empty($wheresql)&&empty($havingsql))
             return false;
+		//print_r($sql); 
+		$sql = "SELECT NS.CompanyName AS 'Company Name', 
+						NSI.CompanySymbol AS 'Symbol', 
+						NS.`transactions` AS 'Transactions',
+						NS.`difference` AS 'Differnece', 
+						
+						NS.`tradedShares`AS 'Total Traded', 
+						NS.`closingPrice` AS 'Closing Price',
+						NS.`maxPrice` AS 'Max. Price', 
+						NS.`minPrice` AS 'Min. Price'
+
+				FROM `wp_nepse_stocks` NS
+				LEFT JOIN wp_nepse_stocks_info NSI
+					ON NS.CompanyName = NSI.CompanyName
+					
+				WHERE 1";
         $results = $wpdb->get_results($sql,ARRAY_A);
         if (current_user_can('manage_options') && isset($_GET['debug']) && 1 == $_GET['debug'])
             $wpdb->show_errors = true;
