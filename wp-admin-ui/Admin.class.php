@@ -32,7 +32,6 @@ if ( isset( $_GET['action'])){
 
 
 
-
 // FOR EXPORTS ONLY
 if ( isset( $_GET['exports_and_reports_download'] ) && isset( $_GET['_wpnonce'] ) && false !== wp_verify_nonce( $_GET['_wpnonce'], 'wp-admin-ui-export' ) ) {
     do_action('wp_admin_ui_export_download');
@@ -1927,13 +1926,15 @@ class WP_Admin_UI
             $this->catch_columns();
         if(false!==$this->export&&$this->action=='export')
             $this->export();
-        if((!empty($this->data)||false!==$this->search_query||false!==$this->default_none)&&false!==$this->search)
+        if(true)
         {
+		
 ?>
 	<?php
+	
 		if (isset( $_GET['page'])){
 			if($_GET['page'] == 'exports-reports-admin-reports'){
-				$adminSettings = true;
+				$adminSettings = true; 
 			}
 		}
 	?>
