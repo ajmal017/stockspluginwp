@@ -63,25 +63,8 @@ if ( isset( $_GET['exports_and_reports_download'] ) && isset( $_GET['_wpnonce'] 
     readfile("$file");
     exit();
 }
-/**
- * Admin UI class for WordPress plugins
- *
- * Creates a UI for any plugin screens within WordPress
- *
- * NOTE: If you are including this class code in a plugin,
- * consider renaming the class to avoid conflicts with other plugins.
- * This is not required, but some developers may include the class
- * the wrong way which could cause an issue with your including the
- * class file.
- *
- * @package Admin UI for Plugins
- *
- * @version 1.9.8.20171011
- * @author Scott Kingsley Clark
- * @link https://www.scottkclark.com/
- *
- * @param mixed $options
- */
+
+
 class WP_Admin_UI
 {
     // base
@@ -1933,7 +1916,7 @@ class WP_Admin_UI
 	<?php
 	
 		if (isset( $_GET['page'])){
-			if($_GET['page'] == 'exports-reports-admin-reports'){
+			if($_GET['page'] == 'exports-reports'){
 				$adminSettings = true; 
 			}
 		}
@@ -1989,9 +1972,6 @@ jQuery(document).ready(function(){
                     $start = $this->get_var('filter_'.$filter.'_start',$this->search_columns[$filter]['filter_default']);
                     $end = $this->get_var('filter_'.$filter.'_end',$this->search_columns[$filter]['filter_ongoing_default']);
 ?>&nbsp;&nbsp;
-            <label for="admin_ui_filter_<?php echo $filter; ?>_start"><?php echo $this->search_columns[$filter]['filter_label']; ?>:</label>
-            <input type="text" name="filter_<?php echo $filter; ?>_start" class="admin_ui_filter admin_ui_date" id="admin_ui_filter_<?php echo $filter; ?>_start" value="<?php echo (false!==$start&&0<strlen($start)?date_i18n('m/d/Y',strtotime($start)):''); ?>" /> <label for="admin_ui_filter_<?php echo $filter; ?>_end">to</label>
-            <input type="text" name="filter_<?php echo $filter; ?>_end" class="admin_ui_filter admin_ui_date" id="admin_ui_filter_<?php echo $filter; ?>_end" value="<?php echo (false!==$end&&0<strlen($end)?date_i18n('m/d/Y',strtotime($end)):''); ?>" />
 <?php
                 }
                 elseif('related'==$this->search_columns[$filter]['type']&&false!==$this->search_columns[$filter]['related'])
@@ -2108,18 +2088,7 @@ jQuery(document).ready(function(){
 ?>
         <div class="alignleft actions">
 <?php
-            if($this->add)
-            {
-?>
-            <input type="button" value="Add New <?php echo $this->item; ?>" class="button" onclick="document.location='<?php echo $this->var_update(array('action'=>'add')); ?>';" />
-<?php
-            }
-            if($this->reorder)
-            {
-?>
-            <input type="button" value="Reorder" class="button" onclick="document.location='<?php echo $this->var_update(array('action'=>'reorder')); ?>';" />
-<?php
-            }
+           
             if($this->export)
             {
 ?>
@@ -2217,8 +2186,11 @@ jQuery(document).ready(function(){
                 wp_print_scripts('jquery-ui-sortable');
         }
         $this->do_hook('table',$reorder);
-        if(isset($this->custom['table'])&&function_exists("{$this->custom['table']}"))
-            return call_user_func( $this->custom['table'],$this,$reorder);
+        if(isset($this->custom['table'])&&function_exists("{$this->custom['table']}")){
+			print_r($this->custom['table']);
+			return call_user_func( $this->custom['table'],$this,$reorder);
+		}
+            
         if(empty($this->data))
         {
 ?>
@@ -2247,10 +2219,11 @@ table.widefat.fixed tbody.sortable tr { height:50px; }
         if(false===$this->$column_index||empty($this->$column_index))
             return $this->error('<strong>Error:</strong> Invalid Configuration - Missing "columns" definition.');
 ?>
+
 <table class="widefat page fixed admin_ui_table wp-list-table" cellspacing="0"<?php echo ($reorder==1&&$this->reorder?' id="admin_ui_reorder"':''); ?>>
     <thead>
         <tr>
-<?php
+<?php	
         $name_column = false;
         $columns = array();
         if(!empty($this->$column_index)) foreach($this->columns as $column=>$attributes)

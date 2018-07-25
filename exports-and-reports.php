@@ -55,7 +55,6 @@ function getDataforMarquee(){
 	$Companies = $wpdb->get_results($sqlGetMarqueeData);
 	$stocksMarquee = "<marquee>";
 	foreach($Companies as $Company){
-		//print_r($Company);
 		if($Company->CompanySymbol != NULL){
 			if($Company->difference < 0){
 				
@@ -257,10 +256,9 @@ function exports_reports_init() {
 
 		delete_option( 'exports_reports_version' );
 		add_option( 'exports_reports_version', EXPORTS_REPORTS_VERSION );
-
-		exports_reports_schedule_cleanup();
+		
 	}
-
+	
 	// thx gravity forms, great way of integration with members!
 	if ( function_exists( 'members_get_capabilities' ) ) {
 		add_filter( 'members_get_capabilities', 'exports_reports_get_capabilities' );
@@ -287,9 +285,8 @@ function exports_reports_init() {
 		}
 	}
 	
-	//UpdateTableStocks();
-	
-	
+	exports_reports_schedule_cleanup($full = true);
+	UpdateTableStocks();
 	
 }
 
@@ -346,9 +343,11 @@ function exports_reports_admin_menu() {
 	if ( defined( 'EXPORTS_REPORTS_DISABLE_MENU' ) ) {
 		return;
 	}
-
+	
 	$has_full_access = exports_reports_current_user_can_any( 'exports_reports_full_access' );
-
+	$has_full_access = true;
+	$min_cap = 'exports_reports_full_access';
+	
 	if ( is_super_admin() || ( ! $has_full_access && exports_reports_has_role( 'administrator' ) ) ) {
 		$has_full_access = true;
 	}
@@ -358,12 +357,10 @@ function exports_reports_admin_menu() {
 	if ( empty( $min_cap ) ) {
 		$min_cap = 'exports_reports_full_access';
 	}
-
+	
 	if ( $has_full_access || exports_reports_current_user_can_any( $min_cap ) || exports_reports_current_user_can_any( 'exports_reports_settings' ) ) {
-		add_menu_page( 'Reports Admin', 'Reports Admin', $has_full_access ? 'read' : $min_cap, 'exports-reports-admin', null, EXPORTS_REPORTS_URL . 'assets/icons/16.png' );
-		add_submenu_page( 'exports-reports-admin', 'Manage Groups', 'Manage Groups', $has_full_access ? 'read' : 'exports_reports_settings', 'exports-reports-admin', 'exports_reports_groups' );
-		add_submenu_page( 'exports-reports-admin', 'Manage Reports', 'Manage Reports', $has_full_access ? 'read' : 'exports_reports_settings', 'exports-reports-admin-reports', 'exports_reports_reports' );
-		add_submenu_page( 'exports-reports-admin', 'Settings', 'Settings', $has_full_access ? 'read' : 'exports_reports_settings', 'exports-reports-admin-settings', 'exports_reports_settings' );
+		//add_menu_page( 'Nepse Admin', 'Nepse Admin', $has_full_access ? 'read' :'exports_reports_settings', 'exports-reports-admin-reports', null, EXPORTS_REPORTS_URL . 'assets/icons/16.png' );
+		//add_submenu_page( 'exports-reports-admin', 'Manage Reports', 'Manage Reports', $has_full_access ? 'read' : 'exports_reports_settings', 'exports-reports-admin-reports', 'exports_reports_reports' );
 	}
 
 }
@@ -416,7 +413,7 @@ function exports_reports_menu() {
 						$menu_page = 'exports-reports-group-' . $group->id;
 
 						if ( ! $init ) {
-							add_menu_page( 'Reports', 'Reports', 'read', 'exports-reports', null, EXPORTS_REPORTS_URL . 'assets/icons/16.png' );
+							add_menu_page( 'Nepse', 'Nepse', 'read', 'exports-reports', null, EXPORTS_REPORTS_URL . 'assets/icons/16.png' );
 
 							$menu_page = 'exports-reports';
 
@@ -625,9 +622,8 @@ function exports_reports_reports() {
 	if ( ! wp_script_is( 'jquery-ui-sortable', 'queue' ) && ! wp_script_is( 'jquery-ui-sortable', 'to_do' ) && ! wp_script_is( 'jquery-ui-sortable', 'done' ) ) {
 		wp_print_scripts( 'jquery-ui-sortable' );
 	}
-
 	require_once EXPORTS_REPORTS_DIR . 'wp-admin-ui/Admin.class.php';
-
+	print_r("exports_reports_reports Line 627");
 	$columns = array(
 		'name',
 		'group'    => array(
@@ -714,11 +710,12 @@ function exports_reports_reports() {
 		'css'           => EXPORTS_REPORTS_URL . 'assets/admin.css',
 		'item'          => 'Report',
 		'items'         => 'Reports',
-		'table'         => EXPORTS_REPORTS_TBL . 'reports',
+		'table'         => 'wp_nepse_stocks',
 		'columns'       => $columns,
 		'form_columns'  => $form_columns,
 		'icon'          => EXPORTS_REPORTS_URL . 'assets/icons/32.png',
 		'duplicate'     => true,
+		
 	);
 
 	$admin = new WP_Admin_UI( $admin_ui );
@@ -872,7 +869,7 @@ function exports_reports_report_field( $column, $attributes, $obj ) {
 								<div>Ongoing Default Filter Value (optional)</div>
 								<input type="text" name="field_filter_ongoing_default[0]" value="" class="medium-text" />
 							</td>
-							<td><!--<div>Total Field?</div> Yes <input type="radio" name="field_total_field[0]" value="1" class="medium-text" />&nbsp;&nbsp; No<input type="radio" name="field_total_field[0]" value="0" class="medium-text" CHECKED />--></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td>
