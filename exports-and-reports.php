@@ -21,26 +21,34 @@ global $wpdb;
 define( 'EXPORTS_REPORTS_TBL', $wpdb->prefix . 'exportsreports_' );
 define( 'EXPORTS_REPORTS_VERSION', '074' );
 define( 'EXPORTS_REPORTS_URL', plugin_dir_url( __FILE__ ) );
-define( 'EXPORTS_REPORTS_DIR', plugin_dir_path( __FILE__ ) );
+define( 'STOCKSPLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+
 
 if ( ! defined( 'WP_ADMIN_UI_EXPORT_URL' ) ) {
 	define( 'WP_ADMIN_UI_EXPORT_URL', WP_CONTENT_URL . '/exports' );
 }
 
+
 if ( ! defined( 'WP_ADMIN_UI_EXPORT_DIR' ) ) {
 	define( 'WP_ADMIN_UI_EXPORT_DIR', WP_CONTENT_DIR . '/exports' );
 }
 
-add_action( 'admin_init', 'exports_reports_init' );
-add_action( 'admin_menu', 'exports_reports_menu' );
-add_action( 'admin_menu', 'exports_reports_admin_menu' );
+add_action( 'admin_init', 'stocksplugin_init' );
+add_action( 'admin_menu', 'stocksplugin_menu' );
+add_action( 'admin_menu', 'stocksplugin_admin_menu' );
 
-add_action( 'wp_ajax_wp_admin_ui_export', 'exports_reports_wp_admin_ui_export' );
+add_action( 'wp_ajax_wp_admin_ui_export', 'exports_reports_wp_admin_ui_export_nepse' );
 
+add_filter('https_ssl_verify', '__return_false');
+add_filter('https_local_ssl_verify', '__return_false');
+ 
 
 
 add_shortcode('stocksInfoMarquee', 'getDataforMarquee');
 add_shortcode('stocksInfoTable', 'getDataforTable');
+if ( shortcode_exists( 'stocksInfoMarquee' ) ) { 
+	//getDataforMarquee();
+} 
 
 function getDataforMarquee(){
 	global $wpdb;
@@ -53,7 +61,7 @@ function getDataforMarquee(){
 		LEFT JOIN wp_nepse_stocks_info NSI
 			ON NS.CompanyName = NSI.CompanyName";
 	$Companies = $wpdb->get_results($sqlGetMarqueeData);
-	$stocksMarquee = "<marquee>";
+	$stocksMarquee = '<div id="stocksMarquee"><marquee>';
 	foreach($Companies as $Company){
 		if($Company->CompanySymbol != NULL){
 			if($Company->difference < 0){
@@ -71,9 +79,8 @@ function getDataforMarquee(){
 			$stocksMarquee .= "|";
 		}
 	}
-	$stocksMarquee .= "</marquee>";
-	return $stocksMarquee;
-	exit;
+	$stocksMarquee .= "</marquee></div>";
+	echo $stocksMarquee;
 }
 
 function getDataforTable(){
@@ -162,9 +169,9 @@ function get_tableHeaders_stocksData(){
 /**
  *
  */
-function exports_reports_wp_admin_ui_export() {
+function exports_reports_wp_admin_ui_export_nepse() {
 
-	require_once EXPORTS_REPORTS_DIR . 'wp-admin-ui/Admin.class.php';
+	require_once STOCKSPLUGIN_DIR . 'wp-admin-ui/Admin.class.php';
 
 	die( 'Invalid request' ); // AJAX dies
 
@@ -173,11 +180,11 @@ function exports_reports_wp_admin_ui_export() {
 /**
  *
  */
-function exports_reports_reset() {
+function exports_reports_reset_nepse() {
 
 	global $wpdb;
 
-	$sql = file_get_contents( EXPORTS_REPORTS_DIR . 'assets/dump.sql' );
+	$sql = file_get_contents( STOCKSPLUGIN_DIR . 'assets/dump.sql' );
 
 	$charset_collate = 'DEFAULT CHARSET utf8';
 
@@ -212,24 +219,24 @@ function exports_reports_reset() {
 
 	update_option( 'exports_reports_token', $token );
 
-	exports_reports_schedule_cleanup();
+	stocksplugin_schedule_cleanup();
 
 }
 
 /**
  *
  */
-function exports_reports_init() {
+function stocksplugin_init() {
 
 	global $current_user, $wpdb;
 
-	$capabilities = exports_reports_capabilities();
+	$capabilities = stocksplugin_capabilities();
 
 	// check version
 	$version = (int) get_option( 'exports_reports_version' );
 
 	if ( empty( $version ) ) {
-		exports_reports_reset();
+		exports_reports_reset_nepse();
 	} elseif ( $version != EXPORTS_REPORTS_VERSION ) {
 		$version = absint( $version );
 
@@ -261,13 +268,13 @@ function exports_reports_init() {
 	
 	// thx gravity forms, great way of integration with members!
 	if ( function_exists( 'members_get_capabilities' ) ) {
-		add_filter( 'members_get_capabilities', 'exports_reports_get_capabilities' );
+		add_filter( 'members_get_capabilities', 'stocksplugin_get_capabilities' );
 
-		if ( exports_reports_current_user_can_any( 'exports_reports_full_access' ) ) {
+		if ( stocksplugin_current_user_can_any( 'exports_reports_full_access' ) ) {
 			$current_user->remove_cap( 'exports_reports_full_access' );
 		}
 
-		$is_admin_with_no_permissions = exports_reports_has_role( 'administrator' ) && ! exports_reports_current_user_can_any( exports_reports_capabilities() );
+		$is_admin_with_no_permissions = stocksplugin_has_role( 'administrator' ) && ! stocksplugin_current_user_can_any( stocksplugin_capabilities() );
 
 		if ( $is_admin_with_no_permissions ) {
 			$role = get_role( 'administrator' );
@@ -277,7 +284,7 @@ function exports_reports_init() {
 			}
 		}
 	} else {
-		$exports_reports_full_access = exports_reports_has_role( 'administrator' ) ? 'exports_reports_full_access' : '';
+		$exports_reports_full_access = stocksplugin_has_role( 'administrator' ) ? 'exports_reports_full_access' : '';
 		$exports_reports_full_access = apply_filters( 'exports_reports_full_access', $exports_reports_full_access );
 
 		if ( ! empty( $exports_reports_full_access ) ) {
@@ -285,7 +292,7 @@ function exports_reports_init() {
 		}
 	}
 	
-	exports_reports_schedule_cleanup($full = true);
+	stocksplugin_schedule_cleanup($full = true);
 	UpdateTableStocks();
 	
 }
@@ -300,7 +307,23 @@ function UpdateTableStocks(){
 	//the url of the json data 
 	//We might need to change this.
 	$url ='https://nepse-data-api.herokuapp.com/data/todaysprice';
-	$content = file_get_contents($url);
+	$ch = curl_init();
+	curl_setopt ($ch, CURLOPT_URL, $url);
+	curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
+	curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+	$content = curl_exec($ch);
+	if (curl_errno($ch)) {
+	  echo curl_error($ch);
+	  echo "\n<br />";
+	  $content = '';
+	} else {
+	  curl_close($ch);
+	}
+
+	if (!is_string($content) || !strlen($content)) {
+	echo "Failed to get content.";
+	$content = '';
+	}
 	$json = json_decode($content,true);
 	$data = $json;
 	
@@ -338,29 +361,28 @@ function UpdateTableStocks(){
 /**
  *
  */
-function exports_reports_admin_menu() {
+function stocksplugin_admin_menu() {
 
 	if ( defined( 'EXPORTS_REPORTS_DISABLE_MENU' ) ) {
 		return;
 	}
 	
-	$has_full_access = exports_reports_current_user_can_any( 'exports_reports_full_access' );
+	$has_full_access = stocksplugin_current_user_can_any( 'exports_reports_full_access' );
 	$has_full_access = true;
 	$min_cap = 'exports_reports_full_access';
 	
-	if ( is_super_admin() || ( ! $has_full_access && exports_reports_has_role( 'administrator' ) ) ) {
+	if ( is_super_admin() || ( ! $has_full_access && stocksplugin_has_role( 'administrator' ) ) ) {
 		$has_full_access = true;
 	}
 
-	$min_cap = exports_reports_current_user_can_which( exports_reports_capabilities() );
+	$min_cap = stocksplugin_current_user_can_which( stocksplugin_capabilities() );
 
 	if ( empty( $min_cap ) ) {
 		$min_cap = 'exports_reports_full_access';
 	}
 	
-	if ( $has_full_access || exports_reports_current_user_can_any( $min_cap ) || exports_reports_current_user_can_any( 'exports_reports_settings' ) ) {
-		//add_menu_page( 'Nepse Admin', 'Nepse Admin', $has_full_access ? 'read' :'exports_reports_settings', 'exports-reports-admin-reports', null, EXPORTS_REPORTS_URL . 'assets/icons/16.png' );
-		//add_submenu_page( 'exports-reports-admin', 'Manage Reports', 'Manage Reports', $has_full_access ? 'read' : 'exports_reports_settings', 'exports-reports-admin-reports', 'exports_reports_reports' );
+	if ( $has_full_access || stocksplugin_current_user_can_any( $min_cap ) || stocksplugin_current_user_can_any( 'stocksplugin_settings' ) ) {
+		//add_submenu_page( 'exports-reports-admin', 'Manage Reports', 'Manage Reports', $has_full_access ? 'read' : 'stocksplugin_settings', 'exports-reports-admin-reports', 'stocksplugin_reports' );
 	}
 
 }
@@ -368,7 +390,7 @@ function exports_reports_admin_menu() {
 /**
  *
  */
-function exports_reports_menu() {
+function stocksplugin_menu() {
 
 	global $wpdb;
 
@@ -376,9 +398,9 @@ function exports_reports_menu() {
 		return;
 	}
 
-	$has_full_access = exports_reports_current_user_can_any( 'exports_reports_full_access' );
+	$has_full_access = stocksplugin_current_user_can_any( 'exports_reports_full_access' );
 
-	if ( is_super_admin() || ( ! $has_full_access && exports_reports_has_role( 'administrator' ) ) ) {
+	if ( is_super_admin() || ( ! $has_full_access && stocksplugin_has_role( 'administrator' ) ) ) {
 		$has_full_access = true;
 	}
 
@@ -409,18 +431,18 @@ function exports_reports_menu() {
 
 			if ( 0 < @count( $reports ) ) {
 				foreach ( $reports as $report ) {
-					if ( $has_full_access || exports_reports_current_user_can_any( 'exports_reports_view' ) || exports_reports_current_user_can_any( 'exports_reports_view_group_' . $group->id ) || exports_reports_current_user_can_any( 'exports_reports_view_report_' . $report->id ) ) {
+					if ( $has_full_access || stocksplugin_current_user_can_any( 'stocksplugin_view' ) || stocksplugin_current_user_can_any( 'stocksplugin_view_group_' . $group->id ) || stocksplugin_current_user_can_any( 'stocksplugin_view_report_' . $report->id ) ) {
 						$menu_page = 'exports-reports-group-' . $group->id;
 
 						if ( ! $init ) {
-							add_menu_page( 'Nepse', 'Nepse', 'read', 'exports-reports', null, EXPORTS_REPORTS_URL . 'assets/icons/16.png' );
+							add_menu_page( 'Nepse', 'Nepse', 'read', 'stocksplugin', null, EXPORTS_REPORTS_URL . 'assets/icons/16.png' );
 
-							$menu_page = 'exports-reports';
+							$menu_page = 'stocksplugin';
 
 							$init = true;
 						}
 
-						add_submenu_page( 'exports-reports', $group->name, $group->name, 'read', $menu_page, 'exports_reports_view' );
+						add_submenu_page( 'stocksplugin', $group->name, $group->name, 'read', $menu_page, 'stocksplugin_view' );
 
 						break;
 					}
@@ -432,18 +454,18 @@ function exports_reports_menu() {
 					}
 
 					foreach ( $roles as $role ) {
-						if ( exports_reports_has_role( $role ) ) {
+						if ( stocksplugin_has_role( $role ) ) {
 							$menu_page = 'exports-reports-group-' . $group->id;
 
 							if ( ! $init ) {
-								add_menu_page( 'Reports', 'Reports', 'read', 'exports-reports', null, EXPORTS_REPORTS_URL . 'assets/icons/16.png' );
+								add_menu_page( 'Reports', 'Reports', 'read', 'stocksplugin', null, EXPORTS_REPORTS_URL . 'assets/icons/16.png' );
 
-								$menu_page = 'exports-reports';
+								$menu_page = 'stocksplugin';
 
 								$init = true;
 							}
 
-							add_submenu_page( 'exports-reports', $group->name, $group->name, 'read', $menu_page, 'exports_reports_view' );
+							add_submenu_page( 'stocksplugin', $group->name, $group->name, 'read', $menu_page, 'stocksplugin_view' );
 
 							break;
 						}
@@ -463,7 +485,7 @@ function exports_reports_menu() {
  *
  * @return string New export file name
  */
-function exports_reports_settings() {
+function stocksplugin_settings() {
 
 	if ( ! empty( $_POST['cronjob_token'] ) ) {
 		update_option( 'exports_reports_token', sanitize_title( $_POST['cronjob_token'] ) );
@@ -479,7 +501,7 @@ function exports_reports_settings() {
 
 		<?php
 			if ( ! empty( $_POST['clear'] ) || ! empty( $_POST['reset'] ) ) {
-				exports_reports_cleanup( true );
+				stocksplugin_cleanup( true );
 		?>
 			<div id="message" class="updated fade">
 				<p>Your Exports directory has been cleaned up and all export files have been removed.</p>
@@ -487,7 +509,7 @@ function exports_reports_settings() {
 		<?php
 			}
 			if ( ! empty( $_POST['reset'] ) ) {
-				exports_reports_reset();
+				exports_reports_reset_nepse();
 		?>
 			<div id="message" class="updated fade">
 				<p>Your Settings have been reset.</p>
@@ -547,9 +569,9 @@ function exports_reports_settings() {
 /**
  *
  */
-function exports_reports_groups() {
+function stocksplugin_groups() {
 
-	require_once EXPORTS_REPORTS_DIR . 'wp-admin-ui/Admin.class.php';
+	require_once STOCKSPLUGIN_DIR . 'wp-admin-ui/Admin.class.php';
 
 	$columns = array(
 		'name',
@@ -575,11 +597,11 @@ function exports_reports_groups() {
 
 	unset( $form_columns['id'] );
 
-	$roles                                           = exports_reports_get_roles();
+	$roles                                           = stocksplugin_get_roles();
 
 	$form_columns['role_access']                     = array(
 		'label'            => 'WP Roles with Access',
-		'comments'         => 'Add the exports_reports_full_access capability to a role for full access to reports, exports_reports_settings for only access to settings, exports_reports_view for access to view all reports, exports_reports_view_group_{ID} for access to view a group and all of the reports within, or exports_reports_view_report_{ID} for access to view a single report',
+		'comments'         => 'Add the exports_reports_full_access capability to a role for full access to reports, stocksplugin_settings for only access to settings, stocksplugin_view for access to view all reports, stocksplugin_view_group_{ID} for access to view a group and all of the reports within, or stocksplugin_view_report_{ID} for access to view a single report',
 		'type'             => 'related',
 		'related'          => $roles,
 		'related_multiple' => true,
@@ -613,7 +635,7 @@ function exports_reports_groups() {
 /**
  *
  */
-function exports_reports_reports() {
+function stocksplugin_reports() {
 
 	if ( ! wp_script_is( 'jquery-ui-core', 'queue' ) && ! wp_script_is( 'jquery-ui-core', 'to_do' ) && ! wp_script_is( 'jquery-ui-core', 'done' ) ) {
 		wp_print_scripts( 'jquery-ui-core' );
@@ -622,8 +644,7 @@ function exports_reports_reports() {
 	if ( ! wp_script_is( 'jquery-ui-sortable', 'queue' ) && ! wp_script_is( 'jquery-ui-sortable', 'to_do' ) && ! wp_script_is( 'jquery-ui-sortable', 'done' ) ) {
 		wp_print_scripts( 'jquery-ui-sortable' );
 	}
-	require_once EXPORTS_REPORTS_DIR . 'wp-admin-ui/Admin.class.php';
-	print_r("exports_reports_reports Line 627");
+	require_once STOCKSPLUGIN_DIR . 'wp-admin-ui/Admin.class.php';
 	$columns = array(
 		'name',
 		'group'    => array(
@@ -675,7 +696,7 @@ function exports_reports_reports() {
 	$form_columns['updated']['date_touch']           = true;
 	$form_columns['updated']['display']              = false;
 
-	$roles = exports_reports_get_roles();
+	$roles = stocksplugin_get_roles();
 
 	$form_columns['role_access'] = array(
 		'label'            => 'WP Roles with Access',
@@ -698,8 +719,8 @@ function exports_reports_reports() {
 
 	$form_columns['field_data'] = array(
 		'label'        => 'Fields (optional)',
-		'custom_input' => 'exports_reports_report_field',
-		'custom_save'  => 'exports_reports_report_field_save'
+		'custom_input' => 'stocksplugin_report_field',
+		'custom_save'  => 'stocksplugin_report_field_save'
 	);
 
 	$admin_ui = array(
@@ -729,7 +750,7 @@ function exports_reports_reports() {
  * @param $attributes
  * @param $obj
  */
-function exports_reports_report_field( $column, $attributes, $obj ) {
+function stocksplugin_report_field( $column, $attributes, $obj ) {
 
 	$field_data = @json_decode( $obj->row[ $column ], true );
 	?>
@@ -808,14 +829,14 @@ function exports_reports_report_field( $column, $attributes, $obj ) {
 						<tbody id="field_show_0" class="field_show">
 						<tr>
 							<td colspan="3">
-								<a href="#advanced" onclick="jQuery('#field_show_0').hide();jQuery('#field_advanced_0').show();exports_reports_reset_alt();return false;">+&nbsp;&nbsp;Show Advanced Field Options</a>
+								<a href="#advanced" onclick="jQuery('#field_show_0').hide();jQuery('#field_advanced_0').show();exports_reports_reset_nepse_alt();return false;">+&nbsp;&nbsp;Show Advanced Field Options</a>
 							</td>
 						</tr>
 						</tbody>
 						<tbody id="field_advanced_0" class="field_advanced">
 						<tr class="field_hide_link">
 							<td colspan="3">
-								<a href="#advanced" onclick="jQuery('#field_show_0').show();jQuery('#field_advanced_0').hide();exports_reports_reset_alt();return false;">-&nbsp;&nbsp;Hide Advanced Field Options</a>
+								<a href="#advanced" onclick="jQuery('#field_show_0').show();jQuery('#field_advanced_0').hide();exports_reports_reset_nepse_alt();return false;">-&nbsp;&nbsp;Hide Advanced Field Options</a>
 							</td>
 						</tr>
 						<tr>
@@ -899,7 +920,7 @@ function exports_reports_report_field( $column, $attributes, $obj ) {
 			if ( is_array( $field_data ) && ! empty( $field_data ) ) {
 				$count = 0;
 				foreach ( $field_data as $field ) {
-					$field = exports_reports_field_defaults( $field );
+					$field = stocksplugin_field_defaults( $field );
 					?>
 					<tr class="field_row">
 						<td>
@@ -932,14 +953,14 @@ function exports_reports_report_field( $column, $attributes, $obj ) {
 								<tbody id="field_show_<?php echo esc_attr( $count ); ?>" class="field_show">
 								<tr>
 									<td colspan="3">
-										<a href="#advanced" onclick="jQuery('#field_show_<?php echo esc_attr( $count ); ?>').hide();jQuery('#field_advanced_<?php echo esc_attr( $count ); ?>').show();exports_reports_reset_alt();return false;">+&nbsp;&nbsp;Show Advanced Field Options</a>
+										<a href="#advanced" onclick="jQuery('#field_show_<?php echo esc_attr( $count ); ?>').hide();jQuery('#field_advanced_<?php echo esc_attr( $count ); ?>').show();exports_reports_reset_nepse_alt();return false;">+&nbsp;&nbsp;Show Advanced Field Options</a>
 									</td>
 								</tr>
 								</tbody>
 								<tbody id="field_advanced_<?php echo esc_attr( $count ); ?>" class="field_advanced">
 								<tr class="field_hide_link">
 									<td colspan="3">
-										<a href="#advanced" onclick="jQuery('#field_show_<?php echo esc_attr( $count ); ?>').show();jQuery('#field_advanced_<?php echo esc_attr( $count ); ?>').hide();exports_reports_reset_alt();return false;">-&nbsp;&nbsp;Hide Advanced Field Options</a>
+										<a href="#advanced" onclick="jQuery('#field_show_<?php echo esc_attr( $count ); ?>').show();jQuery('#field_advanced_<?php echo esc_attr( $count ); ?>').hide();exports_reports_reset_nepse_alt();return false;">-&nbsp;&nbsp;Hide Advanced Field Options</a>
 									</td>
 								</tr>
 								<tr>
@@ -1059,7 +1080,7 @@ function exports_reports_report_field( $column, $attributes, $obj ) {
 			}
 		}
 
-		function exports_reports_reset_alt() {
+		function exports_reports_reset_nepse_alt() {
 			jQuery( 'table.widefat tbody tr' ).removeClass( 'alternate' );
 			jQuery( 'table.widefat tbody tr:even' ).addClass( 'alternate' );
 			jQuery( 'table.widefat tbody tbody tr' ).removeClass( 'alternate' );
@@ -1067,7 +1088,7 @@ function exports_reports_report_field( $column, $attributes, $obj ) {
 		}
 
 		jQuery( function () {
-			exports_reports_reset_alt();
+			exports_reports_reset_nepse_alt();
 			jQuery( ".sortable" ).sortable( {axis                    : "y",
 												handle               : ".dragme",
 												forcePlaceholderSize : true,
@@ -1088,11 +1109,11 @@ function exports_reports_report_field( $column, $attributes, $obj ) {
  *
  * @return string
  */
-function exports_reports_report_field_save( $value, $column, $attributes, $obj ) {
+function stocksplugin_report_field_save( $value, $column, $attributes, $obj ) {
 
 	$value = array();
 
-	$defaults = exports_reports_field_defaults();
+	$defaults = stocksplugin_field_defaults();
 
 	if ( isset( $_POST['field_name'] ) ) {
 		foreach ( $_POST['field_name'] as $key => $field ) {
@@ -1143,7 +1164,7 @@ function exports_reports_report_field_save( $value, $column, $attributes, $obj )
  *
  * @return array|null
  */
-function exports_reports_field_defaults( $field = null ) {
+function stocksplugin_field_defaults( $field = null ) {
 
 	if ( ! is_array( $field ) ) {
 		$field = array();
@@ -1182,7 +1203,7 @@ function exports_reports_field_defaults( $field = null ) {
  *
  * @return bool
  */
-function exports_reports_view( $group_id = false ) {
+function stocksplugin_view( $group_id = false ) {
 
 	if ( empty( $_GET['page'] ) ) {
 		return false;
@@ -1190,13 +1211,13 @@ function exports_reports_view( $group_id = false ) {
 
 	global $wpdb;
 
-	$has_full_access = exports_reports_current_user_can_any( 'exports_reports_full_access' );
+	$has_full_access = stocksplugin_current_user_can_any( 'exports_reports_full_access' );
 
-	if ( is_super_admin() || ( ! $has_full_access && exports_reports_has_role( 'administrator' ) ) ) {
+	if ( is_super_admin() || ( ! $has_full_access && stocksplugin_has_role( 'administrator' ) ) ) {
 		$has_full_access = true;
 	}
 
-	if ( 'exports-reports' !== $_GET['page'] && false !== strpos( $_GET['page'], 'exports-reports-group-' ) ) {
+	if ( 'stocksplugin' !== $_GET['page'] && false !== strpos( $_GET['page'], 'exports-reports-group-' ) ) {
 		if ( empty( $group_id ) ) {
 			$group_id = (int) str_replace( 'exports-reports-group-', '', sanitize_text_field( $_GET['page'] ) );
 		}
@@ -1244,7 +1265,7 @@ function exports_reports_view( $group_id = false ) {
 
 				if ( 0 < @count( $reports ) ) {
 					foreach ( $reports as $report ) {
-						if ( $has_full_access || exports_reports_current_user_can_any( 'exports_reports_view' ) || exports_reports_current_user_can_any( 'exports_reports_view_group_' . $group->id ) || exports_reports_current_user_can_any( 'exports_reports_view_report_' . $report->id ) ) {
+						if ( $has_full_access || stocksplugin_current_user_can_any( 'stocksplugin_view' ) || stocksplugin_current_user_can_any( 'stocksplugin_view_group_' . $group->id ) || stocksplugin_current_user_can_any( 'stocksplugin_view_report_' . $report->id ) ) {
 							$group_id = $group->id;
 
 							break;
@@ -1257,7 +1278,7 @@ function exports_reports_view( $group_id = false ) {
 						}
 
 						foreach ( $roles as $role ) {
-							if ( exports_reports_has_role( $role ) ) {
+							if ( stocksplugin_has_role( $role ) ) {
 								$group_id = $group->id;
 
 								break;
@@ -1292,7 +1313,7 @@ function exports_reports_view( $group_id = false ) {
 	$current_report     = false;
 
 	foreach ( $reports as $report ) {
-		if ( $has_full_access || exports_reports_current_user_can_any( 'exports_reports_view' ) || exports_reports_current_user_can_any( 'exports_reports_view_group_' . $group_id ) || exports_reports_current_user_can_any( 'exports_reports_view_report_' . $report->id ) ) {
+		if ( $has_full_access || stocksplugin_current_user_can_any( 'stocksplugin_view' ) || stocksplugin_current_user_can_any( 'stocksplugin_view_group_' . $group_id ) || stocksplugin_current_user_can_any( 'stocksplugin_view_report_' . $report->id ) ) {
 			if ( false === $current_report ) {
 				$current_report = $report->id;
 			}
@@ -1315,7 +1336,7 @@ function exports_reports_view( $group_id = false ) {
 		}
 
 		foreach ( $roles as $role ) {
-			if ( exports_reports_has_role( $role ) ) {
+			if ( stocksplugin_has_role( $role ) ) {
 				if ( false === $current_report ) {
 					$current_report = $report->id;
 				}
@@ -1339,7 +1360,7 @@ function exports_reports_view( $group_id = false ) {
 		$current_report = absint( $_GET['report'] );
 	}
 
-	require_once EXPORTS_REPORTS_DIR . 'wp-admin-ui/Admin.class.php';
+	require_once STOCKSPLUGIN_DIR . 'wp-admin-ui/Admin.class.php';
 
 	$options = array();
 
@@ -1366,7 +1387,7 @@ function exports_reports_view( $group_id = false ) {
 		$options['columns'] = array();
 
 		foreach ( $field_data as $field ) {
-			$field = exports_reports_field_defaults( $field );
+			$field = stocksplugin_field_defaults( $field );
 
 			$options['columns'][ $field['name'] ] = array();
 
@@ -1458,22 +1479,6 @@ function exports_reports_view( $group_id = false ) {
 
 	if ( 1 < count( $selectable_reports ) ) {
 		?>
-		<div style="background-color:#E7E7E7;border:1px solid #D7D7D7; padding:5px 15px;margin:15px 15px 0px 5px;">
-			<strong style="padding-right:10px;">Exports and Reports:</strong>
-			<label for="report" style="vertical-align:baseline;">Choose Report</label>
-			<select id="report" onchange="document.location=this.value;">
-				<?php
-				foreach ( $selectable_reports as $report_id => $report ) {
-					?>
-					<option value="<?php echo esc_attr( $admin->var_update( array(
-						'page'   => sanitize_text_field( $_GET['page'] ),
-						'report' => absint( $report_id ),
-					), false, false, true ) ); ?>"<?php selected( $current_report, $report ); ?>><?php echo esc_html( $report['name'] ); ?></option>
-					<?php
-				}
-				?>
-			</select>
-		</div>
 		<?php
 	}
 
@@ -1481,8 +1486,8 @@ function exports_reports_view( $group_id = false ) {
 
 }
 
-add_action( 'wp_admin_ui_post_export', 'exports_reports_log', 10, 2 );
-add_action( 'wp_admin_ui_post_remove_export', 'exports_reports_delete_log', 10, 2 );
+add_action( 'wp_admin_ui_post_export', 'stocksplugin_log', 10, 2 );
+add_action( 'wp_admin_ui_post_remove_export', 'stocksplugin_delete_log', 10, 2 );
 
 /**
  * @param $args
@@ -1490,7 +1495,7 @@ add_action( 'wp_admin_ui_post_remove_export', 'exports_reports_delete_log', 10, 
  *
  * @return mixed
  */
-function exports_reports_log( $args, $obj ) {
+function stocksplugin_log( $args, $obj ) {
 
 	global $wpdb;
 
@@ -1520,7 +1525,7 @@ function exports_reports_log( $args, $obj ) {
  *
  * @return bool
  */
-function exports_reports_delete_log( $args, $obj ) {
+function stocksplugin_delete_log( $args, $obj ) {
 
 	global $wpdb;
 
@@ -1550,7 +1555,7 @@ function exports_reports_delete_log( $args, $obj ) {
 /**
  * @return mixed
  */
-function exports_reports_schedule_cleanup() {
+function stocksplugin_schedule_cleanup() {
 
 	$schedules = _get_cron_array();
 	$timestamp = false;
@@ -1558,20 +1563,20 @@ function exports_reports_schedule_cleanup() {
 	$key       = md5( serialize( array() ) );
 
 	foreach ( $schedules as $ts => $schedule ) {
-		if ( isset( $schedule['exports_reports_cleanup'] ) && isset( $schedule['exports_reports_cleanup'][ $key ] ) ) {
+		if ( isset( $schedule['stocksplugin_cleanup'] ) && isset( $schedule['stocksplugin_cleanup'][ $key ] ) ) {
 			$timestamp = $ts;
 			break;
 		}
 	}
 
 	if ( false !== $timestamp ) {
-		wp_unschedule_event( $timestamp, 'exports_reports_cleanup', array() );
+		wp_unschedule_event( $timestamp, 'stocksplugin_cleanup', array() );
 	}
 
 	$timestamp  = time();
 	$recurrence = 'daily';
 
-	return wp_schedule_event( $timestamp, $recurrence, 'exports_reports_cleanup', array() );
+	return wp_schedule_event( $timestamp, $recurrence, 'stocksplugin_cleanup', array() );
 
 }
 
@@ -1580,7 +1585,7 @@ function exports_reports_schedule_cleanup() {
  *
  * @return bool
  */
-function exports_reports_cleanup( $full = false ) {
+function stocksplugin_cleanup( $full = false ) {
 
 	global $wpdb;
 
@@ -1648,9 +1653,9 @@ function exports_reports_cleanup( $full = false ) {
  *
  * @return array
  */
-function exports_reports_get_capabilities( $caps ) {
+function stocksplugin_get_capabilities( $caps ) {
 
-	$caps = array_merge( $caps, exports_reports_capabilities() );
+	$caps = array_merge( $caps, stocksplugin_capabilities() );
 
 	return $caps;
 
@@ -1659,12 +1664,12 @@ function exports_reports_get_capabilities( $caps ) {
 /**
  * @return array
  */
-function exports_reports_capabilities() {
+function stocksplugin_capabilities() {
 
 	$caps = array(
 		'exports_reports_full_access',
-		'exports_reports_settings',
-		'exports_reports_view',
+		'stocksplugin_settings',
+		'stocksplugin_view',
 	);
 
 	return $caps;
@@ -1676,7 +1681,7 @@ function exports_reports_capabilities() {
  *
  * @return bool
  */
-function exports_reports_current_user_can_any( $caps ) {
+function stocksplugin_current_user_can_any( $caps ) {
 
 	if ( ! is_user_logged_in() ) {
 		return false;
@@ -1703,7 +1708,7 @@ function exports_reports_current_user_can_any( $caps ) {
  *
  * @return bool
  */
-function exports_reports_current_user_can_which( $caps ) {
+function stocksplugin_current_user_can_which( $caps ) {
 
 	if ( ! is_user_logged_in() ) {
 		return false;
@@ -1723,7 +1728,7 @@ function exports_reports_current_user_can_which( $caps ) {
 /**
  * @return mixed
  */
-function exports_reports_get_roles() {
+function stocksplugin_get_roles() {
 
 	global $wp_roles;
 
@@ -1740,7 +1745,7 @@ function exports_reports_get_roles() {
  *
  * @return bool
  */
-function exports_reports_has_role( $role ) {
+function stocksplugin_has_role( $role ) {
 
 	global $current_user;
 

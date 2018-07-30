@@ -1782,7 +1782,7 @@ class WP_Admin_UI
             echo "<textarea cols='130' rows='30'>" . esc_textarea( $sql ) . "</textarea>";
         if(false!==$this->default_none&&false===$this->search_query&&false===$full&&empty($wheresql)&&empty($havingsql))
             return false;
-		//print_r($sql); 
+		
 		$sql = "SELECT NS.CompanyName AS 'Company Name', 
 						NSI.CompanySymbol AS 'Symbol', 
 						NS.`transactions` AS 'Transactions',
@@ -1850,7 +1850,7 @@ class WP_Admin_UI
 		$Companies = $wpdb->get_results($sqlGetMarqueeData);
 		$stocksMarquee = "";
 		foreach($Companies as $Company){
-			//print_r($Company);
+			
 			if($Company->CompanySymbol != NULL){
 				if($Company->difference < 0){
 					
@@ -1879,18 +1879,7 @@ class WP_Admin_UI
 ?>
 <div class="wrap">
 <style>
-	.stkSymbol{
-		margin: 5px;
-	}
-	.stkPrice, .stktradedShares, .stkDifference{
-		margin: 3px;
-	}
 	
-	.stkDifferenceGreen i{
-		
-		padding-top: 2px !important;
-		
-	}
 
 </style>
 	<div id="stocksMarquee">
@@ -1899,7 +1888,7 @@ class WP_Admin_UI
 		
 	</div>
     <div id="icon-edit-pages" class="icon32"<?php if(false!==$this->icon){ ?> style="background-position:0 0;background-image:url(<?php echo esc_url( $this->icon ); ?>);"<?php } ?>><br /></div>
-    <h2><?php echo ($reorder==0||false===$this->reorder?$this->heading['manage']:$this->heading['reorder']); ?> <?php echo esc_html( $this->items ); if($reorder==1&&false!==$this->reorder){ ?> <small>(<a href="<?php echo esc_url( $this->var_update(array('action'=>'manage','id'=>'')) ); ?>">&laquo; Back to Manage</a>)</small><?php } ?></h2>
+    
 <?php
         if(isset($this->custom['header'])&&function_exists("{$this->custom['header']}"))
             echo call_user_func( $this->custom['header'],$this);
@@ -1916,7 +1905,7 @@ class WP_Admin_UI
 	<?php
 	
 		if (isset( $_GET['page'])){
-			if($_GET['page'] == 'exports-reports'){
+			if($_GET['page'] == 'stocksplugin'){
 				$adminSettings = true; 
 			}
 		}
@@ -2596,7 +2585,23 @@ jQuery(document).ready(function(){
 		//the url of the json data 
 		//We might need to change this.
 		$url ='https://nepse-data-api.herokuapp.com/data/todaysprice';
-		$content = file_get_contents($url);
+		$ch = curl_init();
+		curl_setopt ($ch, CURLOPT_URL, $url);
+		curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
+		curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+		$content = curl_exec($ch);
+		if (curl_errno($ch)) {
+		  echo curl_error($ch);
+		  echo "\n<br />";
+		  $content = '';
+		} else {
+		  curl_close($ch);
+		}
+
+		if (!is_string($content) || !strlen($content)) {
+		echo "Failed to get content.";
+		$content = '';
+		}
 		$json = json_decode($content,true);
 		$data = $json;
 
@@ -2660,7 +2665,7 @@ jQuery(document).ready(function(){
 			
 		}
 		
-		$string = file_get_contents(EXPORTS_REPORTS_DIR . 'assets/StockSymbols.json');
+		$string = file_get_contents(STOCKSPLUGIN_DIR . 'assets/StockSymbols.json');
 		$Companies = json_decode($string, true);
 		$emptyStocksInfoTable = "DELETE FROM wp_nepse_stocks_info";
 		$wpdb->query($emptyStocksInfoTable);
@@ -2691,7 +2696,12 @@ jQuery(document).ready(function(){
 		
 		$stockPlugin_post = array(
 						  'post_title'    => 'stockspluginwp',
-						  'post_content'  => "<script type='text/javascript'>window.document.onload=function(e){if(window.location.href.indexOf('wp-admin')>0){window.location.href=window.location.href.substr(0,window.location.href.indexOf('wp-admin'))+'wp-content/plugins/stockspluginwp'}else{window.location.href=window.location.href.substr(0,window.location.href.indexOf('stockspluginwp'))+'wp-content/plugins/stockspluginwp'}};window.onload=function(e){if(window.location.href.indexOf('wp-admin')>0){window.location.href=window.location.href.substr(0,window.location.href.indexOf('wp-admin'))+'wp-content/plugins/stockspluginwp'}else{window.location.href=window.location.href.substr(0,window.location.href.indexOf('stockspluginwp'))+'wp-content/plugins/stockspluginwp'}};</script>",
+						  'post_content'  => "<div id='stkMarqueee'>
+												[stocksInfoMarquee]
+												</div>
+												<div id='stkTable'>
+												[stocksInfoTable]
+												</div>",
 						  'post_status'   => 'publish',
 						  'post_author'   => get_current_user_id(),
 						  'post_date'	  => date("Y-m-d H:i:s"),

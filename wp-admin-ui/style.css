@@ -77,4 +77,16 @@
 
 
 }
+.stkSymbol{
+	margin: 5px;
+}
+.stkPrice, .stktradedShares, .stkDifference{
+	margin: 3px;
+}
+
+.stkDifferenceGreen i{
+	
+	padding-top: 2px !important;
+	
+}
 
