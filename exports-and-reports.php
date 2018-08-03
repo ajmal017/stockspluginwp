@@ -8,14 +8,7 @@ Author: Himalayan Techies, H.T. Solutions Pvt. Ltd.
 Author URI: https://http://himalayantechies.com/
 Author email: info@himalayantechies.com
 */
-?>
-<style>
-<?php 
-	include 'wp-admin-ui/style.css'; 
-?>
-</style>
 
-<?php
 global $wpdb;
 
 define( 'EXPORTS_REPORTS_TBL', $wpdb->prefix . 'exportsreports_' );
@@ -49,6 +42,9 @@ add_shortcode('stocksInfoTable', 'getDataforTable');
 if ( shortcode_exists( 'stocksInfoMarquee' ) ) { 
 	//getDataforMarquee();
 } 
+echo "<style>";
+include 'wp-admin-ui/style.css';
+echo "</style>";
 
 function getDataforMarquee(){
 	global $wpdb;

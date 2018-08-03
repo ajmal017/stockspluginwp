@@ -51,7 +51,7 @@ if ( isset( $_GET['exports_and_reports_download'] ) && isset( $_GET['_wpnonce'] 
         ini_set('zlib.output_compression','Off');
 	}
 
-    header("Pragma: public"); // required
+    /*header("Pragma: public"); // required
     header("Expires: 0");
     header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
     header("Cache-Control: private",false); // required for certain browsers
@@ -60,7 +60,7 @@ if ( isset( $_GET['exports_and_reports_download'] ) && isset( $_GET['_wpnonce'] 
     header("Content-Transfer-Encoding: binary");
     header("Content-Length: ".filesize($file));
     flush();
-    readfile("$file");
+    readfile("$file");*/
     exit();
 }
 
