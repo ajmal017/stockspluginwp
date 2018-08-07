@@ -39,13 +39,21 @@
 
     padding-left: 115px;
     padding-top: 35px;
+   
 
 }
 .stkTable {
 
     width: 1100px;
-
+    margin-top:30px;
+    margin-left:48px;
+    border-collapse: inherit;
 }
+
+.stkTable td{
+    border:1px solid #fff;
+}
+
 .stkTable tr {
 
     line-height: 22px;
@@ -59,23 +67,20 @@
     color: #fff;
     padding-top: 10px;
     padding-left: 20px;
-
+    border-left: 1px solid #fff;
 }
 .IndvStk.stkGain {
 
-    background: #FF3333;
+    background: #009900 ;
     color: #fff;
 	text-align: center;
-
 }
 .IndvStk.stkLoss {
 
-    background: #009900;
+    background: #FF3333;
     color: #fff;
     text-align: center;
 	opacity:0.8;
-
-
 }
 .stkSymbol{
 	margin: 5px;
@@ -89,4 +94,3 @@
 	padding-top: 2px !important;
 	
 }
-

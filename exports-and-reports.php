@@ -42,9 +42,9 @@ add_shortcode('stocksInfoTable', 'getDataforTable');
 if ( shortcode_exists( 'stocksInfoMarquee' ) ) { 
 	//getDataforMarquee();
 } 
-echo "<style>";
-include 'wp-admin-ui/style.css';
-echo "</style>";
+//echo "<style>";
+//include 'wp-admin-ui/style.css';
+//echo "</style>";
 
 function getDataforMarquee(){
 	global $wpdb;
@@ -81,6 +81,7 @@ function getDataforMarquee(){
 
 function getDataforTable(){
 ?>
+<link type="text/css" rel="stylesheet" href="<?php echo esc_url( EXPORTS_REPORTS_URL . 'wp-admin-ui/style.css' ); ?>" />
 	<table class="stkTable">
 			<?php 
 				$tableHeaders = get_tableHeaders_stocksData();
