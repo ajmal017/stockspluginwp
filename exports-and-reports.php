@@ -14,6 +14,7 @@ global $wpdb;
 define( 'EXPORTS_REPORTS_TBL', $wpdb->prefix . 'exportsreports_' );
 define( 'EXPORTS_REPORTS_VERSION', '074' );
 define( 'EXPORTS_REPORTS_URL', plugin_dir_url( __FILE__ ) );
+define( 'STOCKS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'STOCKSPLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 
@@ -57,7 +58,7 @@ function getDataforMarquee(){
 		LEFT JOIN wp_nepse_stocks_info NSI
 			ON NS.CompanyName = NSI.CompanyName";
 	$Companies = $wpdb->get_results($sqlGetMarqueeData);
-	$stocksMarquee = '<div id="stocksMarquee"><marquee>';
+	$stocksMarquee = '<div id="stocksMarquee"><marquee  onMouseOver="this.stop();" onMouseOut="this.start();">';
 	foreach($Companies as $Company){
 		if($Company->CompanySymbol != NULL){
 			if($Company->difference < 0){
@@ -81,7 +82,7 @@ function getDataforMarquee(){
 
 function getDataforTable(){
 ?>
-<link type="text/css" rel="stylesheet" href="<?php echo esc_url( EXPORTS_REPORTS_URL . 'wp-admin-ui/style.css' ); ?>" />
+<link type="text/css" rel="stylesheet" href="<?php echo esc_url( STOCKS_PLUGIN_URL . 'wp-admin-ui/style.css' ); ?>" />
 	<table class="stkTable">
 			<?php 
 				$tableHeaders = get_tableHeaders_stocksData();
