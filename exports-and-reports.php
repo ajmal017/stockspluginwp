@@ -83,7 +83,8 @@ function getDataforMarquee(){
 function getDataforTable(){
 ?>
 <link type="text/css" rel="stylesheet" href="<?php echo esc_url( STOCKS_PLUGIN_URL . 'wp-admin-ui/style.css' ); ?>" />
-	<table class="stkTable">
+	<div style="overflow-x: auto;">
+    	<table class="stkTable">
 			<?php 
 				$tableHeaders = get_tableHeaders_stocksData();
 				foreach($tableHeaders as $th){
@@ -113,8 +114,8 @@ function getDataforTable(){
 					}
 			?>
 				<tr class='IndvStk <?php echo $class; ?>'>
-					<td class='stkName'><?php echo $CompanyName; ?></td>
-					<td class='stkSymbol'><?php echo $Symbol;	?></td>
+					<td class='stkSymbol' title='<?php echo $CompanyName; ?>'><?php echo $Symbol;	?></td>
+
 					<td class='stkTransactions'><?php echo $Transactions;	?></td>
 					<td class='stkDifference <?php echo $class_td; ?>'><?php echo $Difference;	?></td>
 					<td class='stkTotalTraded'><?php echo $TotalTraded;	?></td>
@@ -125,7 +126,7 @@ function getDataforTable(){
 			<?php
 			}?>
 		</table>
-
+    </div>
 <?php	
 }
 
@@ -152,8 +153,7 @@ function get_stocksData(){
 }
 
 function get_tableHeaders_stocksData(){
-	$tableHeaders = array(	'Company Name', 
-						'Symbol', 
+	$tableHeaders = array(			'Company', 
 						'Transactions', 
 						'Difference', 
 						'Total traded', 
