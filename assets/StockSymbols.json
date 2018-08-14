@@ -285,7 +285,7 @@
 	"CompanyName": "Mero Microfinance Bittiya Sanstha Ltd."
 }, {
 	"Symbol": "MMFDB",
-	"CompanyName": "Mirmire Microfinance Development Bank Ltd."
+	"CompanyName": "Mirmire Laghubitta Bittiya Sanstha Limited"
 }, {
 	"Symbol": "MIDBL",
 	"CompanyName": "Mission Development Bank Ltd."
@@ -294,7 +294,7 @@
 	"CompanyName": "Miteri Development Bank Limited"
 }, {
 	"Symbol": "MLBBL",
-	"CompanyName": "Mithila LaghuBitta Bikas Bank Ltd."
+	"CompanyName": "Mithila LaghuBitta Bittiya Sanstha Limited"
 }, {
 	"Symbol": "MMDBL",
 	"CompanyName": "Mount Makalu Development Bank Ltd."
@@ -307,6 +307,9 @@
 }, {
 	"Symbol": "NABIL",
 	"CompanyName": "Nabil Bank Limited"
+}, {
+	"Symbol": "NABILP",
+	"CompanyName": "Nabil Bank Limited Promoter Share"
 }, {
 	"Symbol": "NEF",
 	"CompanyName": "Nabil Equity Fund"
@@ -344,6 +347,9 @@
 	"Symbol": "NBBU",
 	"CompanyName": "Nepal Bitumin And Barrel Udhyog Limited"
 }, {
+	"Symbol": "NCDB",
+	"CompanyName": "Nepal Community Development Bank Ltd."
+}, {
 	"Symbol": "NCCB",
 	"CompanyName": "Nepal Credit And Commercial Bank Limited"
 }, {
@@ -364,6 +370,9 @@
 }, {
 	"Symbol": "NIB",
 	"CompanyName": "Nepal Investment Bank Limited"
+}, {
+	"Symbol": "NIBPO",
+	"CompanyName": "Nepal Investment Bank Ltd. Promoter Share"
 }, {
 	"Symbol": "NKU",
 	"CompanyName": "Nepal Khadya Udhyog Limited"
@@ -411,7 +420,7 @@
 	"CompanyName": "NIDC Development Bank Ltd."
 }, {
 	"Symbol": "NUBL",
-	"CompanyName": "Nirdhan Utthan Bank Limited"
+	"CompanyName": "Nirdhan Utthan Laghubitta Bittiya Sanstha Limited"
 }, {
 	"Symbol": "NLG",
 	"CompanyName": "NLG Insurance Company Ltd."
@@ -466,6 +475,9 @@
 }, {
 	"Symbol": "RJM",
 	"CompanyName": "Raghupati Jute Mills Limited"
+}, {
+	"Symbol": "RRHP",
+	"CompanyName": "Rairang Hydropower Development Company Ltd."
 }, {
 	"Symbol": "RBCL",
 	"CompanyName": "Rastriya Beema Company Limited"
