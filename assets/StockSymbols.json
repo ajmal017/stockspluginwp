@@ -122,6 +122,9 @@
 	"Symbol": "FOWAD",
 	"CompanyName": "Forward Community Microfinance Bittiya Sanstha Ltd."
 }, {
+	"Symbol": "GDBL",
+	"CompanyName": "Gandaki Bikas Bank Limited"
+}, {
 	"Symbol": "GBBL",
 	"CompanyName": "Garima Bikas Bank Limited"
 }, {
@@ -270,7 +273,7 @@
 	"CompanyName": "Mahila Sahayatra Microfinance Bittiya Sanstha Ltd."
 }, {
 	"Symbol": "MSLB",
-	"CompanyName": "Mahuli Samudayik Laghubitta Sanstha Ltd."
+	"CompanyName": "Mahuli Samudayik Laghubitta Bittiya Sanstha Ltd."
 }, {
 	"Symbol": "MFIL",
 	"CompanyName": "Manjushree Finance Ltd."
@@ -467,6 +470,9 @@
 	"Symbol": "RBCL",
 	"CompanyName": "Rastriya Beema Company Limited"
 }, {
+	"Symbol": "RBCLPO",
+	"CompanyName": "Rastriya Beema Company Limited Promoter Share"
+}, {
 	"Symbol": "RLFL",
 	"CompanyName": "Reliance Finance Ltd."
 }, {
@@ -477,7 +483,7 @@
 	"CompanyName": "RSDC Laghubitta Bittiya Sanstha Ltd."
 }, {
 	"Symbol": "RMDC",
-	"CompanyName": "Rural Microfinance Development Centre Ltd."
+	"CompanyName": "RMDC Laghubitta Bittiya Sanstha Ltd."
 }, {
 	"Symbol": "SIC",
 	"CompanyName": "Sagarmatha Insurance Co. Ltd."
