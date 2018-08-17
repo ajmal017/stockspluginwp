@@ -5,8 +5,9 @@ Plugin Name: Nepse Stocks Plugin
 Plugin URI: https://bitbucket.org/himalayantechies/stockspluginwp
 Description: Displays real time data fetched from nepse (Nepal Stock Exchange)
 Author: Himalayan Techies, H.T. Solutions Pvt. Ltd.
-Author URI: https://http://himalayantechies.com/
+Author URI: http://himalayantechies.com/
 Author email: info@himalayantechies.com
+Version: 1.0
 */
 
 global $wpdb;
