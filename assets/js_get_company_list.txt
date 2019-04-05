@@ -1,0 +1,36 @@
+var count =1 ;
+var str = '';
+
+$(".my-table").find("tr").each(  function(i,el){ 
+	if(count >= 3){
+		var td_count = 1;
+		var company_name = '';
+		var company_symbol = '';
+		var category = '';
+		var company = [];
+		
+		$(el).find("td").each(function(index, value){
+			if(td_count == 3){
+				company_name = $(value).html().trim();
+			}
+			if(td_count == 4){
+				company_symbol = $(value).html();
+			}
+			if(td_count == 5){
+				category = $(value).html();
+			}
+			td_count = td_count +1;
+		});
+		if(company_symbol !== '' && company_name !== ''){
+			str +=  '{"Symbol":"'+company_symbol+'","CompanyName":"'+company_name+'"},';
+		}
+		
+				
+	}
+    count = count +1;
+});
+console.log(str);
+
+1.Run the above script on http://www.nepalstock.com/company
+2. Copy console log and validate it on jsonlint.com
+3. Replace stock json with this content
