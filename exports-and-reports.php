@@ -65,14 +65,14 @@ function getDataforMarquee(){
 			if($Company->difference < 0){
 				
 				$stocksMarquee .= "<span class='stkSymbol' style='color:red'>".$Company->CompanySymbol ."</span>";
-				$stocksMarquee .= "<span class='stkPrice' style='color:red'>(".$Company->closingPrice .")</span>";
-				$stocksMarquee .= "<span class='stktradedShares' style='color:red'>".$Company->tradedShares ."</span>";
-				$stocksMarquee .= '<span class="stkDifferenceGreen"><i  style="color:red">'.$Company->difference .'</i></span>';
+				$stocksMarquee .= "<span class='stkPrice' style='color:red'> (".$Company->closingPrice .") </span>";
+				$stocksMarquee .= "<span class='stktradedShares' style='color:red'> ".$Company->tradedShares ." </span>";
+				$stocksMarquee .= '<span class="stkDifferenceGreen"><i  style="color:red"> ('.$Company->difference .')</i></span>';
 			}else{
 				$stocksMarquee .= "<span class='stkSymbol' style='color:green'>".$Company->CompanySymbol ."</span>";
-				$stocksMarquee .= "<span class='stkPrice' style='color:green'>(".$Company->closingPrice .")</span>";
-				$stocksMarquee .= "<span class='stktradedShares' style='color:green'>".$Company->tradedShares ."</span>";
-				$stocksMarquee .= '<span class="stkDifferenceRed"><i  style="color:green">'.$Company->difference .'</i></span>';
+				$stocksMarquee .= "<span class='stkPrice' style='color:green'> (".$Company->closingPrice .") </span>";
+				$stocksMarquee .= "<span class='stktradedShares' style='color:green'> ".$Company->tradedShares ." </span>";
+				$stocksMarquee .= '<span class="stkDifferenceRed"><i  style="color:green">('.$Company->difference .')</i></span>';
 			}
 			$stocksMarquee .= "|";
 		}

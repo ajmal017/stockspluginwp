@@ -1,664 +1,1361 @@
 [{
-	"Symbol": "ADBL",
-	"CompanyName": "Agriculture Development Bank Limited"
-}, {
-	"Symbol": "AKJCL",
-	"CompanyName": "Ankhu Khola Jalvidhyut Company Limited"
-}, {
-	"Symbol": "API",
-	"CompanyName": "Api Power Company Ltd."
-}, {
-	"Symbol": "AMFI",
-	"CompanyName": "Arambha Microfinance Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "AKPL",
-	"CompanyName": "Arun Kabeli Power Ltd."
-}, {
-	"Symbol": "AHPC",
-	"CompanyName": "Arun Valley Hydropower Development Co. Ltd."
-}, {
-	"Symbol": "AVU",
-	"CompanyName": "Arun Vanaspati Udhyog Limited"
-}, {
-	"Symbol": "ALBSL",
-	"CompanyName": "Asha Laghubitta Bittiya Sanstha Ltd"
-}, {
-	"Symbol": "ALICL",
-	"CompanyName": "Asian Life Insurance Co. Limited"
-}, {
-	"Symbol": "BOKL",
-	"CompanyName": "Bank of Kathmandu Ltd."
-}, {
-	"Symbol": "BARUN",
-	"CompanyName": "Barun Hydropower Co. Ltd."
-}, {
-	"Symbol": "BFC",
-	"CompanyName": "Best Finance Company Ltd."
-}, {
-	"Symbol": "BHBL",
-	"CompanyName": "Bhargav Bikash Bank Ltd."
-}, {
-	"Symbol": "BSL",
-	"CompanyName": "Birat Shoe Limited"
-}, {
-	"Symbol": "BBC",
-	"CompanyName": "Bishal Bazar Company Limited"
-}, {
-	"Symbol": "BNL",
-	"CompanyName": "Bottlers Nepal (Balaju) Limited"
-}, {
-	"Symbol": "BNT",
-	"CompanyName": "Bottlers Nepal (Terai) Limited"
-}, {
-	"Symbol": "BPCL",
-	"CompanyName": "Butwal Power Company Limited"
-}, {
-	"Symbol": "BSM",
-	"CompanyName": "Butwal Spinning Mills Limited"
-}, {
-	"Symbol": "CMB",
-	"CompanyName": "Capital Merchant Bank &amp; Finance Co. Ltd."
-}, {
-	"Symbol": "CFCL",
-	"CompanyName": "Central Finance Co. Ltd."
-}, {
-	"Symbol": "CCBL",
-	"CompanyName": "Century Commercial Bank Ltd."
-}, {
-	"Symbol": "CHLBS",
-	"CompanyName": "Chautari Laghubitta Bittya Sanstha Ltd"
-}, {
-	"Symbol": "CBBL",
-	"CompanyName": "Chhimek Laghubitta Bikas Bank Limited"
-}, {
-	"Symbol": "CHL",
-	"CompanyName": "Chhyangdi Hydropower Ltd."
-}, {
-	"Symbol": "CHCL",
-	"CompanyName": "Chilime Hydropower Company Limited"
-}, {
-	"Symbol": "CZBIL",
-	"CompanyName": "Citizen Bank International Limited"
-}, {
-	"Symbol": "CIT",
-	"CompanyName": "Citizen Investment Trust"
-}, {
-	"Symbol": "CMF1",
-	"CompanyName": "Citizens Mutual Fund -1"
-}, {
-	"Symbol": "CEFL",
-	"CompanyName": "City Express Finance Co. Limited"
-}, {
-	"Symbol": "CBL",
-	"CompanyName": "Civil Bank Ltd"
-}, {
-	"Symbol": "CLBSL",
-	"CompanyName": "Civil Laghubitta Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "CORBL",
-	"CompanyName": "Corporate Development Bank Limited"
-}, {
-	"Symbol": "CFL",
-	"CompanyName": "Crystal Finance Ltd."
-}, {
-	"Symbol": "DDBL",
-	"CompanyName": "Deprosc Laghubitta Bittiya Sanstha Limited"
-}, {
-	"Symbol": "DBBL",
-	"CompanyName": "Deva Bikas Bank Limited"
-}, {
-	"Symbol": "DHPL",
-	"CompanyName": "Dibyashwori Hydropower Ltd."
-}, {
-	"Symbol": "EBL",
-	"CompanyName": "Everest Bank Limited"
-}, {
-	"Symbol": "EBLCP",
-	"CompanyName": "Everest Bank Limited Con. Pref."
-}, {
-	"Symbol": "EIC",
-	"CompanyName": "Everest Insurance Co. Ltd."
-}, {
-	"Symbol": "EDBL",
-	"CompanyName": "Excel Development Bank Ltd."
-}, {
-	"Symbol": "FMDBL",
-	"CompanyName": "First Micro Finance Laghubitta Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "FHL",
-	"CompanyName": "Fleur Himalayan Limited"
-}, {
-	"Symbol": "FOWAD",
-	"CompanyName": "Forward Community Microfinance Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "GDBL",
-	"CompanyName": "Gandaki Bikas Bank Limited"
-}, {
-	"Symbol": "GBBL",
-	"CompanyName": "Garima Bikas Bank Limited"
-}, {
-	"Symbol": "GHL",
-	"CompanyName": "Ghalemdi Hydro Limited"
-}, {
-	"Symbol": "GBIME",
-	"CompanyName": "Global IME Bank Limited"
-}, {
-	"Symbol": "GILB",
-	"CompanyName": "Global IME Laghubitta Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "GIMES1",
-	"CompanyName": "Global IME Samunnat Scheme-1"
-}, {
-	"Symbol": "GFCL",
-	"CompanyName": "Goodwill Finance Co. Ltd."
-}, {
-	"Symbol": "GRU",
-	"CompanyName": "Gorakhkali Rubber Udhyog Limited"
-}, {
-	"Symbol": "GBLBS",
-	"CompanyName": "Grameen Bikas Laghubitta Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "GRDBL",
-	"CompanyName": "Green Development Bank Ltd."
-}, {
-	"Symbol": "GMFIL",
-	"CompanyName": "Guheshowori Merchant Bank &amp; Finance Co. Ltd."
-}, {
-	"Symbol": "GLICL",
-	"CompanyName": "Gurans Life Insurance Company Ltd."
-}, {
-	"Symbol": "GUFL",
-	"CompanyName": "Gurkhas Finance Ltd."
-}, {
-	"Symbol": "HAMRO",
-	"CompanyName": "Hamro Bikas Bank Ltd."
-}, {
-	"Symbol": "HBT",
-	"CompanyName": "Harisiddhi Brick And Tiles Limited"
-}, {
-	"Symbol": "HATH",
-	"CompanyName": "Hathway Finance Company Limited"
-}, {
-	"Symbol": "HBL",
-	"CompanyName": "Himalayan Bank Limited"
-}, {
-	"Symbol": "HDL",
-	"CompanyName": "Himalayan Distillery Limited"
-}, {
-	"Symbol": "HFL",
-	"CompanyName": "Himalayan Finance Limited (Bittiya Sanstha)"
-}, {
-	"Symbol": "HGI",
-	"CompanyName": "Himalayan General Insurance Co. Ltd"
-}, {
-	"Symbol": "HPPL",
-	"CompanyName": "Himalayan Power Partner Ltd."
-}, {
-	"Symbol": "HIDCL",
-	"CompanyName": "Hydroelectricity Investment and Development Company Ltd"
-}, {
-	"Symbol": "ICFC",
-	"CompanyName": "ICFC Finance Limited"
-}, {
-	"Symbol": "IGI",
-	"CompanyName": "IME General Insurance Ltd."
-}, {
-	"Symbol": "JFL",
-	"CompanyName": "Janaki Finance Ltd."
-}, {
-	"Symbol": "JBNL",
-	"CompanyName": "Janata Bank Nepal Ltd."
-}, {
-	"Symbol": "JSLBB",
-	"CompanyName": "Janautthan Samudayic Laghubitta Bikas Bank Ltd."
-}, {
-	"Symbol": "JEFL",
-	"CompanyName": "Jebils Finance Ltd."
-}, {
-	"Symbol": "JOSHI",
-	"CompanyName": "Joshi Hydropower Development Company Ltd"
-}, {
-	"Symbol": "JBBL",
-	"CompanyName": "Jyoti Bikas Bank Limited"
-}, {
-	"Symbol": "JSM",
-	"CompanyName": "Jyoti Sinning Mills Limited"
-}, {
-	"Symbol": "KEBL",
-	"CompanyName": "Kabeli Bikas Bank Limited"
-}, {
-	"Symbol": "KBBL",
-	"CompanyName": "Kailash Bikas Bank Ltd."
-}, {
-	"Symbol": "KMCDB",
-	"CompanyName": "Kalika Laghubitta Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "KPCL",
-	"CompanyName": "Kalika power Company Ltd"
-}, {
-	"Symbol": "KSBBL",
-	"CompanyName": "Kamana Sewa Bikas Bank Limited"
-}, {
-	"Symbol": "KADBL",
-	"CompanyName": "Kanchan Development Bank Limited"
-}, {
-	"Symbol": "KNBL",
-	"CompanyName": "Kankai Bikas Bank Ltd."
-}, {
-	"Symbol": "KRBL",
-	"CompanyName": "Karnali Development Bank Limited"
-}, {
-	"Symbol": "KKHC",
-	"CompanyName": "Khanikhola Hydropower Co. Ltd."
-}, {
-	"Symbol": "KMFL",
-	"CompanyName": "Kisan Microfinance Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "KBL",
-	"CompanyName": "Kumari Bank Limited"
-}, {
-	"Symbol": "LFC",
-	"CompanyName": "Lalitpur Finance Ltd."
-}, {
-	"Symbol": "LBL",
-	"CompanyName": "Laxmi Bank Limited"
-}, {
-	"Symbol": "LEMF",
-	"CompanyName": "Laxmi Equity Fund"
-}, {
-	"Symbol": "LLBS",
-	"CompanyName": "Laxmi Laghubitta Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "LVF1",
-	"CompanyName": "Laxmi Value Fund-1"
-}, {
-	"Symbol": "LICN",
-	"CompanyName": "Life Insurance Co. Nepal"
-}, {
-	"Symbol": "LBBL",
-	"CompanyName": "Lumbini Bikas Bank Ltd."
-}, {
-	"Symbol": "LGIL",
-	"CompanyName": "Lumbini General Insurance Co. Ltd."
-}, {
-	"Symbol": "MBL",
-	"CompanyName": "Machhapuchhre Bank Limited"
-}, {
-	"Symbol": "MLBL",
-	"CompanyName": "Mahalaxmi Bikas Bank Ltd."
-}, {
-	"Symbol": "MSMBS",
-	"CompanyName": "Mahila Sahayatra Microfinance Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "MSLB",
-	"CompanyName": "Mahuli Samudayik Laghubitta Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "MFIL",
-	"CompanyName": "Manjushree Finance Ltd."
-}, {
-	"Symbol": "MEGA",
-	"CompanyName": "Mega  Bank Nepal Ltd."
-}, {
-	"Symbol": "MERO",
-	"CompanyName": "Mero Microfinance Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "MMFDB",
-	"CompanyName": "Mirmire LaghuBitta Bittiya Sanstha Limited"
-}, {
-	"Symbol": "MIDBL",
-	"CompanyName": "Mission Development Bank Ltd."
-}, {
-	"Symbol": "MDB",
-	"CompanyName": "Miteri Development Bank Limited"
-}, {
-	"Symbol": "MLBBL",
-	"CompanyName": "Mithila LaghuBitta Bittiya Sanstha Limited"
-}, {
-	"Symbol": "MNBBL",
-	"CompanyName": "Muktinath Bikas Bank Ltd."
-}, {
-	"Symbol": "MPFL",
-	"CompanyName": "Multipurpose Finance Company  Limited"
-}, {
-	"Symbol": "NABIL",
-	"CompanyName": "Nabil Bank Limited"
-}, {
-	"Symbol": "NEF",
-	"CompanyName": "Nabil Equity Fund"
-}, {
-	"Symbol": "NADEP",
-	"CompanyName": "Nadep Laghubitta Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "NBBL",
-	"CompanyName": "NagBeli LaghuBitta Bikas Bank Ltd."
-}, {
-	"Symbol": "NABBC",
-	"CompanyName": "Narayani Development Bank Limited"
-}, {
-	"Symbol": "NHPC",
-	"CompanyName": "National Hydro Power Company Limited"
-}, {
-	"Symbol": "NLICL",
-	"CompanyName": "National Life Insurance Co. Ltd."
-}, {
-	"Symbol": "NMFBS",
-	"CompanyName": "National Microfinance Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "NNLB",
-	"CompanyName": "Naya Nepal Laghubitta Bikas Bank Ltd."
-}, {
-	"Symbol": "NIL",
-	"CompanyName": "Neco Insurance Co. Ltd."
-}, {
-	"Symbol": "NBB",
-	"CompanyName": "Nepal Bangladesh Bank Limited"
-}, {
-	"Symbol": "NBL",
-	"CompanyName": "Nepal Bank Limited"
-}, {
-	"Symbol": "NBBU",
-	"CompanyName": "Nepal Bitumin And Barrel Udhyog Limited"
-}, {
-	"Symbol": "NCDB",
-	"CompanyName": "Nepal Community Development Bank Ltd."
-}, {
-	"Symbol": "NCCB",
-	"CompanyName": "Nepal Credit And Commercial Bank Limited"
-}, {
-	"Symbol": "NTC",
-	"CompanyName": "Nepal Doorsanchar Comapany Limited"
-}, {
-	"Symbol": "NFD",
-	"CompanyName": "Nepal Film Development Company Limited"
-}, {
-	"Symbol": "NFS",
-	"CompanyName": "Nepal Finance Ltd."
-}, {
-	"Symbol": "NHDL",
-	"CompanyName": "Nepal Hydro Developers Ltd."
-}, {
-	"Symbol": "NICL",
-	"CompanyName": "Nepal Insurance Co. Ltd."
-}, {
-	"Symbol": "NIB",
-	"CompanyName": "Nepal Investment Bank Limited"
-}, {
-	"Symbol": "NKU",
-	"CompanyName": "Nepal Khadya Udhyog Limited"
-}, {
-	"Symbol": "NLIC",
-	"CompanyName": "Nepal Life Insurance Co. Ltd."
-}, {
-	"Symbol": "NLO",
-	"CompanyName": "Nepal Lube Oil Limited"
-}, {
-	"Symbol": "SBI",
-	"CompanyName": "Nepal SBI Bank Limited"
-}, {
-	"Symbol": "NSEWA",
-	"CompanyName": "Nepal Seva Laghubitta Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "NSM",
-	"CompanyName": "Nepal Share Markets Ltd."
-}, {
-	"Symbol": "NTL",
-	"CompanyName": "Nepal Tading Limited"
-}, {
-	"Symbol": "NVG",
-	"CompanyName": "Nepal Vanaspati Ghee Udhyog Limited"
-}, {
-	"Symbol": "NWC",
-	"CompanyName": "Nepal Welfare Company Limited"
-}, {
-	"Symbol": "NLBBL",
-	"CompanyName": "Nerude Laghubita Bikas Bank Limited"
-}, {
-	"Symbol": "NGPL",
-	"CompanyName": "Ngadi Group Power Ltd."
-}, {
-	"Symbol": "NIBLPF",
-	"CompanyName": "NIBL Pragati Fund"
-}, {
-	"Symbol": "NIBSF1",
-	"CompanyName": "NIBL Samriddhi Fund 1"
-}, {
-	"Symbol": "NICA",
-	"CompanyName": "NIC Asia Bank Ltd."
-}, {
-	"Symbol": "NICGF",
-	"CompanyName": "NIC Asia Growth Fund"
-}, {
-	"Symbol": "NIDC",
-	"CompanyName": "NIDC Development Bank Ltd."
-}, {
-	"Symbol": "NUBL",
-	"CompanyName": "Nirdhan Utthan Laghubitta Bittiya Sanstha Limited"
-}, {
-	"Symbol": "NLG",
-	"CompanyName": "NLG Insurance Company Ltd."
-}, {
-	"Symbol": "NMBMF",
-	"CompanyName": "NMB  Microfinance Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "NMB",
-	"CompanyName": "NMB Bank Limited"
-}, {
-	"Symbol": "NMBHF1",
-	"CompanyName": "NMB Hybrid Fund L-1"
-}, {
-	"Symbol": "NMBSF1",
-	"CompanyName": "NMB Sulav Investment Fund-1"
-}, {
-	"Symbol": "ODBL",
-	"CompanyName": "Om Development Bank Ltd."
-}, {
-	"Symbol": "OHL",
-	"CompanyName": "Oriental Hotels Limited"
-}, {
-	"Symbol": "PMHPL",
-	"CompanyName": "Panchakanya Mai Hydropower Ltd"
-}, {
-	"Symbol": "PFL",
-	"CompanyName": "Pokhara Finance Ltd."
-}, {
-	"Symbol": "PRVU",
-	"CompanyName": "Prabhu  Bank Limited"
-}, {
-	"Symbol": "PRIN",
-	"CompanyName": "Prabhu Insurance Ltd."
-}, {
-	"Symbol": "PIC",
-	"CompanyName": "Premier Insurance Co. Ltd."
-}, {
-	"Symbol": "PCBL",
-	"CompanyName": "Prime Commercial Bank Ltd."
-}, {
-	"Symbol": "PLIC",
-	"CompanyName": "Prime Life Insurance Company Limited"
-}, {
-	"Symbol": "PROFL",
-	"CompanyName": "ProgressiveFinance Limited"
-}, {
-	"Symbol": "PICL",
-	"CompanyName": "Prudential Insurance Co. Ltd."
-}, {
-	"Symbol": "PURBL",
-	"CompanyName": "Purnima Bikas Bank Ltd."
-}, {
-	"Symbol": "RADHI",
-	"CompanyName": "Radhi Bidyut Company Ltd"
-}, {
-	"Symbol": "RJM",
-	"CompanyName": "Raghupati Jute Mills Limited"
-}, {
-	"Symbol": "RRHP",
-	"CompanyName": "Rairang Hydropower Development Company Ltd."
-}, {
-	"Symbol": "RBCL",
-	"CompanyName": "Rastriya Beema Company Limited"
-}, {
-	"Symbol": "RLFL",
-	"CompanyName": "Reliance Finance Ltd."
-}, {
-	"Symbol": "RHPC",
-	"CompanyName": "Ridi Hydropower Development Company Ltd."
-}, {
-	"Symbol": "RMDC",
-	"CompanyName": "RMDC Laghubitta Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "RSDC",
-	"CompanyName": "RSDC Laghubitta Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "SIC",
-	"CompanyName": "Sagarmatha Insurance Co. Ltd."
-}, {
-	"Symbol": "SHBL",
-	"CompanyName": "Sahara Bikas Bank Ltd."
-}, {
-	"Symbol": "SBBLJ",
-	"CompanyName": "Sahayogi Bikas Bank Limited"
-}, {
-	"Symbol": "STC",
-	"CompanyName": "Salt Trading Corporation"
-}, {
-	"Symbol": "SMATA",
-	"CompanyName": "Samata Microfinance Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "SFC",
-	"CompanyName": "Samjhana Finance Co. Ltd."
-}, {
-	"Symbol": "SLBSL",
-	"CompanyName": "Samudayik Laghubitta Bittiya Sanstha Limited"
-}, {
-	"Symbol": "SKBBL",
-	"CompanyName": "Sana Kisan Bikas Bank Ltd"
-}, {
-	"Symbol": "SANIMA",
-	"CompanyName": "Sanima Bank Limited"
-}, {
-	"Symbol": "SAEF",
-	"CompanyName": "Sanima Equity Fund"
-}, {
-	"Symbol": "SHPC",
-	"CompanyName": "Sanima Mai Hydropower Ltd."
-}, {
-	"Symbol": "SKDBL",
-	"CompanyName": "Saptakoshi Development Bank Ltd."
-}, {
-	"Symbol": "SADBL",
-	"CompanyName": "Shangrila Development Bank Ltd."
-}, {
-	"Symbol": "SICL",
-	"CompanyName": "Shikhar Insurance Co. Ltd."
-}, {
-	"Symbol": "SHINE",
-	"CompanyName": "Shine Resunga Development Bank Ltd."
-}, {
-	"Symbol": "SHIVM",
-	"CompanyName": "SHIVAM CEMENTS LTD"
-}, {
-	"Symbol": "SBPP",
-	"CompanyName": "Shree Bhrikuti Pulp And Paper Limited"
-}, {
-	"Symbol": "SIFC",
-	"CompanyName": "Shree Investment Finance Co. Ltd."
-}, {
-	"Symbol": "SRS",
-	"CompanyName": "Shree Ram Sugar Mills Limited"
-}, {
-	"Symbol": "SFFIL",
-	"CompanyName": "Shrijana Finance  (Bittaya Sanstha)"
-}, {
-	"Symbol": "SBL",
-	"CompanyName": "Siddhartha Bank Limited"
-}, {
-	"Symbol": "SEF",
-	"CompanyName": "Siddhartha Equity Fund"
-}, {
-	"Symbol": "SEOS",
-	"CompanyName": "Siddhartha Equity Orineted Scheme"
-}, {
-	"Symbol": "SIL",
-	"CompanyName": "Siddhartha Insurance Ltd."
-}, {
-	"Symbol": "SINDU",
-	"CompanyName": "Sindhu Bikash Bank Ltd"
-}, {
-	"Symbol": "SHL",
-	"CompanyName": "Soaltee Hotel Limited"
-}, {
-	"Symbol": "SCB",
-	"CompanyName": "Standard Chartered Bank Limited"
-}, {
-	"Symbol": "SMFDB",
-	"CompanyName": "Summit Micro Finance Development Bank Ltd."
-}, {
-	"Symbol": "SRBL",
-	"CompanyName": "Sunrise Bank Limited"
-}, {
-	"Symbol": "SMB",
-	"CompanyName": "Support Microfinance Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "SLICL",
-	"CompanyName": "Surya Life Insurance Company Limited"
-}, {
-	"Symbol": "SLBS",
-	"CompanyName": "Suryodaya Laghubitta Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "SWBBL",
-	"CompanyName": "Swabalamban Laghubitta Bittiya Sanstha Limited"
-}, {
-	"Symbol": "SDESI",
-	"CompanyName": "Swadeshi Laghubitta Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "SLBBL",
-	"CompanyName": "Swarojgar Laghu Bitta Bikas Bank Ltd."
-}, {
-	"Symbol": "SYFL",
-	"CompanyName": "Synergy Finance Ltd."
-}, {
-	"Symbol": "SPDL",
-	"CompanyName": "Synergy Power Development Ltd."
-}, {
-	"Symbol": "TRH",
-	"CompanyName": "Taragaon Regency Hotel Limited"
-}, {
-	"Symbol": "TNBL",
-	"CompanyName": "Tinau Development Bank Limited"
-}, {
-	"Symbol": "UNL",
-	"CompanyName": "Uniliver Nepal Limited"
-}, {
-	"Symbol": "UFL",
-	"CompanyName": "United Finance Ltd."
-}, {
-	"Symbol": "UIC",
-	"CompanyName": "United Insurance Co. (Nepal) Ltd."
-}, {
-	"Symbol": "UMHL",
-	"CompanyName": "United Modi Hydropower Ltd."
-}, {
-	"Symbol": "UPCL",
-	"CompanyName": "UNIVERSAL POWER COMPANY LTD"
-}, {
-	"Symbol": "UMB",
-	"CompanyName": "Unnati Micorfinance Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "UPPER",
-	"CompanyName": "Upper Tamakoshi Hydropower Ltd"
-}, {
-	"Symbol": "VLBS",
-	"CompanyName": "Vijaya laghubitta Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "WDBL",
-	"CompanyName": "Western Development Bank Limited"
-}, {
-	"Symbol": "WOMI",
-	"CompanyName": "Womi Microfinance Bittiya Sanstha Ltd."
-}, {
-	"Symbol": "WMBF",
-	"CompanyName": "World Merchant Banking &amp; Finance Ltd."
-}, {
-	"Symbol": "YHL",
-	"CompanyName": "Yak And Yeti Hotel Limited"
-}]
+		"Symbol": "ADBL",
+		"CompanyName": "Agriculture Development Bank Limited"
+	}, {
+		"Symbol": "AKJCL",
+		"CompanyName": "Ankhu Khola Jalvidhyut Company Limited"
+	}, {
+		"Symbol": "API",
+		"CompanyName": "Api Power Company Ltd."
+	}, {
+		"Symbol": "AMFI",
+		"CompanyName": "Arambha Microfinance Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "AKPL",
+		"CompanyName": "Arun Kabeli Power Ltd."
+	}, {
+		"Symbol": "AHPC",
+		"CompanyName": "Arun Valley Hydropower Development Co. Ltd."
+	}, {
+		"Symbol": "AVU",
+		"CompanyName": "Arun Vanaspati Udhyog Limited"
+	}, {
+		"Symbol": "ALBSL",
+		"CompanyName": "Asha Laghubitta Bittiya Sanstha Ltd"
+	}, {
+		"Symbol": "ALICL",
+		"CompanyName": "Asian Life Insurance Co. Limited"
+	}, {
+		"Symbol": "BOKL",
+		"CompanyName": "Bank of Kathmandu Ltd."
+	}, {
+		"Symbol": "BARUN",
+		"CompanyName": "Barun Hydropower Co. Ltd."
+	}, {
+		"Symbol": "BFC",
+		"CompanyName": "Best Finance Company Ltd."
+	}, {
+		"Symbol": "BHBL",
+		"CompanyName": "Bhargav Bikash Bank Ltd."
+	}, {
+		"Symbol": "BSL",
+		"CompanyName": "Birat Shoe Limited"
+	}, {
+		"Symbol": "BBC",
+		"CompanyName": "Bishal Bazar Company Limited"
+	}, {
+		"Symbol": "BNL",
+		"CompanyName": "Bottlers Nepal (Balaju) Limited"
+	}, {
+		"Symbol": "BNT",
+		"CompanyName": "Bottlers Nepal (Terai) Limited"
+	}, {
+		"Symbol": "BPCL",
+		"CompanyName": "Butwal Power Company Limited"
+	}, {
+		"Symbol": "BSM",
+		"CompanyName": "Butwal Spinning Mills Limited"
+	}, {
+		"Symbol": "CMB",
+		"CompanyName": "Capital Merchant Bank &amp; Finance Co. Ltd."
+	}, {
+		"Symbol": "CFCL",
+		"CompanyName": "Central Finance Co. Ltd."
+	}, {
+		"Symbol": "CCBL",
+		"CompanyName": "Century Commercial Bank Ltd."
+	}, {
+		"Symbol": "CHLBS",
+		"CompanyName": "Chautari Laghubitta Bittya Sanstha Ltd"
+	}, {
+		"Symbol": "CBBL",
+		"CompanyName": "Chhimek Laghubitta Bikas Bank Limited"
+	}, {
+		"Symbol": "CHL",
+		"CompanyName": "Chhyangdi Hydropower Ltd."
+	}, {
+		"Symbol": "CHCL",
+		"CompanyName": "Chilime Hydropower Company Limited"
+	}, {
+		"Symbol": "CZBIL",
+		"CompanyName": "Citizen Bank International Limited"
+	}, {
+		"Symbol": "CIT",
+		"CompanyName": "Citizen Investment Trust"
+	}, {
+		"Symbol": "CMF1",
+		"CompanyName": "Citizens Mutual Fund -1"
+	}, {
+		"Symbol": "CEFL",
+		"CompanyName": "City Express Finance Co. Limited"
+	}, {
+		"Symbol": "CBL",
+		"CompanyName": "Civil Bank Ltd"
+	}, {
+		"Symbol": "CLBSL",
+		"CompanyName": "Civil Laghubitta Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "CORBL",
+		"CompanyName": "Corporate Development Bank Limited"
+	}, {
+		"Symbol": "CFL",
+		"CompanyName": "Crystal Finance Ltd."
+	}, {
+		"Symbol": "DDBL",
+		"CompanyName": "Deprosc Laghubitta Bittiya Sanstha Limited"
+	}, {
+		"Symbol": "DBBL",
+		"CompanyName": "Deva Bikas Bank Limited"
+	}, {
+		"Symbol": "DHPL",
+		"CompanyName": "Dibyashwori Hydropower Ltd."
+	}, {
+		"Symbol": "EBL",
+		"CompanyName": "Everest Bank Limited"
+	}, {
+		"Symbol": "EBLCP",
+		"CompanyName": "Everest Bank Limited Con. Pref."
+	}, {
+		"Symbol": "EIC",
+		"CompanyName": "Everest Insurance Co. Ltd."
+	}, {
+		"Symbol": "EDBL",
+		"CompanyName": "Excel Development Bank Ltd."
+	}, {
+		"Symbol": "FMDBL",
+		"CompanyName": "First Micro Finance Laghubitta Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "FHL",
+		"CompanyName": "Fleur Himalayan Limited"
+	}, {
+		"Symbol": "FOWAD",
+		"CompanyName": "Forward Community Microfinance Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "GDBL",
+		"CompanyName": "Gandaki Bikas Bank Limited"
+	}, {
+		"Symbol": "GBBL",
+		"CompanyName": "Garima Bikas Bank Limited"
+	}, {
+		"Symbol": "GHL",
+		"CompanyName": "Ghalemdi Hydro Limited"
+	}, {
+		"Symbol": "GBIME",
+		"CompanyName": "Global IME Bank Limited"
+	}, {
+		"Symbol": "GILB",
+		"CompanyName": "Global IME Laghubitta Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "GIMES1",
+		"CompanyName": "Global IME Samunnat Scheme-1"
+	}, {
+		"Symbol": "GFCL",
+		"CompanyName": "Goodwill Finance Co. Ltd."
+	}, {
+		"Symbol": "GRU",
+		"CompanyName": "Gorakhkali Rubber Udhyog Limited"
+	}, {
+		"Symbol": "GBLBS",
+		"CompanyName": "Grameen Bikas Laghubitta Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "GRDBL",
+		"CompanyName": "Green Development Bank Ltd."
+	}, {
+		"Symbol": "GMFIL",
+		"CompanyName": "Guheshowori Merchant Bank &amp; Finance Co. Ltd."
+	}, {
+		"Symbol": "GLICL",
+		"CompanyName": "Gurans Life Insurance Company Ltd."
+	}, {
+		"Symbol": "GUFL",
+		"CompanyName": "Gurkhas Finance Ltd."
+	}, {
+		"Symbol": "HAMRO",
+		"CompanyName": "Hamro Bikas Bank Ltd."
+	}, {
+		"Symbol": "HBT",
+		"CompanyName": "Harisiddhi Brick And Tiles Limited"
+	}, {
+		"Symbol": "HATH",
+		"CompanyName": "Hathway Finance Company Limited"
+	}, {
+		"Symbol": "HBL",
+		"CompanyName": "Himalayan Bank Limited"
+	}, {
+		"Symbol": "HDL",
+		"CompanyName": "Himalayan Distillery Limited"
+	}, {
+		"Symbol": "HFL",
+		"CompanyName": "Himalayan Finance Limited (Bittiya Sanstha)"
+	}, {
+		"Symbol": "HGI",
+		"CompanyName": "Himalayan General Insurance Co. Ltd"
+	}, {
+		"Symbol": "HPPL",
+		"CompanyName": "Himalayan Power Partner Ltd."
+	}, {
+		"Symbol": "HIDCL",
+		"CompanyName": "Hydroelectricity Investment and Development Company Ltd"
+	}, {
+		"Symbol": "ICFC",
+		"CompanyName": "ICFC Finance Limited"
+	}, {
+		"Symbol": "IGI",
+		"CompanyName": "IME General Insurance Ltd."
+	}, {
+		"Symbol": "JFL",
+		"CompanyName": "Janaki Finance Ltd."
+	}, {
+		"Symbol": "JBNL",
+		"CompanyName": "Janata Bank Nepal Ltd."
+	}, {
+		"Symbol": "JSLBB",
+		"CompanyName": "Janautthan Samudayic Laghubitta Bikas Bank Ltd."
+	}, {
+		"Symbol": "JEFL",
+		"CompanyName": "Jebils Finance Ltd."
+	}, {
+		"Symbol": "JOSHI",
+		"CompanyName": "Joshi Hydropower Development Company Ltd"
+	}, {
+		"Symbol": "JBBL",
+		"CompanyName": "Jyoti Bikas Bank Limited"
+	}, {
+		"Symbol": "JSM",
+		"CompanyName": "Jyoti Sinning Mills Limited"
+	}, {
+		"Symbol": "KEBL",
+		"CompanyName": "Kabeli Bikas Bank Limited"
+	}, {
+		"Symbol": "KBBL",
+		"CompanyName": "Kailash Bikas Bank Ltd."
+	}, {
+		"Symbol": "KMCDB",
+		"CompanyName": "Kalika Laghubitta Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "KPCL",
+		"CompanyName": "Kalika power Company Ltd"
+	}, {
+		"Symbol": "KSBBL",
+		"CompanyName": "Kamana Sewa Bikas Bank Limited"
+	}, {
+		"Symbol": "KADBL",
+		"CompanyName": "Kanchan Development Bank Limited"
+	}, {
+		"Symbol": "KNBL",
+		"CompanyName": "Kankai Bikas Bank Ltd."
+	}, {
+		"Symbol": "KRBL",
+		"CompanyName": "Karnali Development Bank Limited"
+	}, {
+		"Symbol": "KKHC",
+		"CompanyName": "Khanikhola Hydropower Co. Ltd."
+	}, {
+		"Symbol": "KMFL",
+		"CompanyName": "Kisan Microfinance Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "KBL",
+		"CompanyName": "Kumari Bank Limited"
+	}, {
+		"Symbol": "LFC",
+		"CompanyName": "Lalitpur Finance Ltd."
+	}, {
+		"Symbol": "LBL",
+		"CompanyName": "Laxmi Bank Limited"
+	}, {
+		"Symbol": "LEMF",
+		"CompanyName": "Laxmi Equity Fund"
+	}, {
+		"Symbol": "LLBS",
+		"CompanyName": "Laxmi Laghubitta Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "LVF1",
+		"CompanyName": "Laxmi Value Fund-1"
+	}, {
+		"Symbol": "LICN",
+		"CompanyName": "Life Insurance Co. Nepal"
+	}, {
+		"Symbol": "LBBL",
+		"CompanyName": "Lumbini Bikas Bank Ltd."
+	}, {
+		"Symbol": "LGIL",
+		"CompanyName": "Lumbini General Insurance Co. Ltd."
+	}, {
+		"Symbol": "MBL",
+		"CompanyName": "Machhapuchhre Bank Limited"
+	}, {
+		"Symbol": "MLBL",
+		"CompanyName": "Mahalaxmi Bikas Bank Ltd."
+	}, {
+		"Symbol": "MSMBS",
+		"CompanyName": "Mahila Sahayatra Microfinance Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "MSLB",
+		"CompanyName": "Mahuli Samudayik Laghubitta Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "MFIL",
+		"CompanyName": "Manjushree Finance Ltd."
+	}, {
+		"Symbol": "MEGA",
+		"CompanyName": "Mega  Bank Nepal Ltd."
+	}, {
+		"Symbol": "MERO",
+		"CompanyName": "Mero Microfinance Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "MMFDB",
+		"CompanyName": "Mirmire LaghuBitta Bittiya Sanstha Limited"
+	}, {
+		"Symbol": "MIDBL",
+		"CompanyName": "Mission Development Bank Ltd."
+	}, {
+		"Symbol": "MDB",
+		"CompanyName": "Miteri Development Bank Limited"
+	}, {
+		"Symbol": "MLBBL",
+		"CompanyName": "Mithila LaghuBitta Bittiya Sanstha Limited"
+	}, {
+		"Symbol": "MNBBL",
+		"CompanyName": "Muktinath Bikas Bank Ltd."
+	}, {
+		"Symbol": "MPFL",
+		"CompanyName": "Multipurpose Finance Company  Limited"
+	}, {
+		"Symbol": "NABIL",
+		"CompanyName": "Nabil Bank Limited"
+	}, {
+		"Symbol": "NEF",
+		"CompanyName": "Nabil Equity Fund"
+	}, {
+		"Symbol": "NADEP",
+		"CompanyName": "Nadep Laghubitta Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "NBBL",
+		"CompanyName": "NagBeli LaghuBitta Bikas Bank Ltd."
+	}, {
+		"Symbol": "NABBC",
+		"CompanyName": "Narayani Development Bank Limited"
+	}, {
+		"Symbol": "NHPC",
+		"CompanyName": "National Hydro Power Company Limited"
+	}, {
+		"Symbol": "NLICL",
+		"CompanyName": "National Life Insurance Co. Ltd."
+	}, {
+		"Symbol": "NMFBS",
+		"CompanyName": "National Microfinance Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "NNLB",
+		"CompanyName": "Naya Nepal Laghubitta Bikas Bank Ltd."
+	}, {
+		"Symbol": "NIL",
+		"CompanyName": "Neco Insurance Co. Ltd."
+	}, {
+		"Symbol": "NBB",
+		"CompanyName": "Nepal Bangladesh Bank Limited"
+	}, {
+		"Symbol": "NBL",
+		"CompanyName": "Nepal Bank Limited"
+	}, {
+		"Symbol": "NBBU",
+		"CompanyName": "Nepal Bitumin And Barrel Udhyog Limited"
+	}, {
+		"Symbol": "NCDB",
+		"CompanyName": "Nepal Community Development Bank Ltd."
+	}, {
+		"Symbol": "NCCB",
+		"CompanyName": "Nepal Credit And Commercial Bank Limited"
+	}, {
+		"Symbol": "NTC",
+		"CompanyName": "Nepal Doorsanchar Comapany Limited"
+	}, {
+		"Symbol": "NFD",
+		"CompanyName": "Nepal Film Development Company Limited"
+	}, {
+		"Symbol": "NFS",
+		"CompanyName": "Nepal Finance Ltd."
+	}, {
+		"Symbol": "NHDL",
+		"CompanyName": "Nepal Hydro Developers Ltd."
+	}, {
+		"Symbol": "NICL",
+		"CompanyName": "Nepal Insurance Co. Ltd."
+	}, {
+		"Symbol": "NIB",
+		"CompanyName": "Nepal Investment Bank Limited"
+	}, {
+		"Symbol": "NKU",
+		"CompanyName": "Nepal Khadya Udhyog Limited"
+	}, {
+		"Symbol": "NLIC",
+		"CompanyName": "Nepal Life Insurance Co. Ltd."
+	}, {
+		"Symbol": "NLO",
+		"CompanyName": "Nepal Lube Oil Limited"
+	}, {
+		"Symbol": "SBI",
+		"CompanyName": "Nepal SBI Bank Limited"
+	}, {
+		"Symbol": "NSEWA",
+		"CompanyName": "Nepal Seva Laghubitta Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "NSM",
+		"CompanyName": "Nepal Share Markets Ltd."
+	}, {
+		"Symbol": "NTL",
+		"CompanyName": "Nepal Tading Limited"
+	}, {
+		"Symbol": "NVG",
+		"CompanyName": "Nepal Vanaspati Ghee Udhyog Limited"
+	}, {
+		"Symbol": "NWC",
+		"CompanyName": "Nepal Welfare Company Limited"
+	}, {
+		"Symbol": "NLBBL",
+		"CompanyName": "Nerude Laghubita Bikas Bank Limited"
+	}, {
+		"Symbol": "NGPL",
+		"CompanyName": "Ngadi Group Power Ltd."
+	}, {
+		"Symbol": "NIBLPF",
+		"CompanyName": "NIBL Pragati Fund"
+	}, {
+		"Symbol": "NIBSF1",
+		"CompanyName": "NIBL Samriddhi Fund 1"
+	}, {
+		"Symbol": "NICA",
+		"CompanyName": "NIC Asia Bank Ltd."
+	}, {
+		"Symbol": "NICGF",
+		"CompanyName": "NIC Asia Growth Fund"
+	}, {
+		"Symbol": "NIDC",
+		"CompanyName": "NIDC Development Bank Ltd."
+	}, {
+		"Symbol": "NUBL",
+		"CompanyName": "Nirdhan Utthan Laghubitta Bittiya Sanstha Limited"
+	}, {
+		"Symbol": "NLG",
+		"CompanyName": "NLG Insurance Company Ltd."
+	}, {
+		"Symbol": "NMBMF",
+		"CompanyName": "NMB  Microfinance Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "NMB",
+		"CompanyName": "NMB Bank Limited"
+	}, {
+		"Symbol": "NMBHF1",
+		"CompanyName": "NMB Hybrid Fund L-1"
+	}, {
+		"Symbol": "NMBSF1",
+		"CompanyName": "NMB Sulav Investment Fund-1"
+	}, {
+		"Symbol": "ODBL",
+		"CompanyName": "Om Development Bank Ltd."
+	}, {
+		"Symbol": "OHL",
+		"CompanyName": "Oriental Hotels Limited"
+	}, {
+		"Symbol": "PMHPL",
+		"CompanyName": "Panchakanya Mai Hydropower Ltd"
+	}, {
+		"Symbol": "PFL",
+		"CompanyName": "Pokhara Finance Ltd."
+	}, {
+		"Symbol": "PRVU",
+		"CompanyName": "Prabhu  Bank Limited"
+	}, {
+		"Symbol": "PRIN",
+		"CompanyName": "Prabhu Insurance Ltd."
+	}, {
+		"Symbol": "PIC",
+		"CompanyName": "Premier Insurance Co. Ltd."
+	}, {
+		"Symbol": "PCBL",
+		"CompanyName": "Prime Commercial Bank Ltd."
+	}, {
+		"Symbol": "PLIC",
+		"CompanyName": "Prime Life Insurance Company Limited"
+	}, {
+		"Symbol": "PROFL",
+		"CompanyName": "ProgressiveFinance Limited"
+	}, {
+		"Symbol": "PICL",
+		"CompanyName": "Prudential Insurance Co. Ltd."
+	}, {
+		"Symbol": "PURBL",
+		"CompanyName": "Purnima Bikas Bank Ltd."
+	}, {
+		"Symbol": "RADHI",
+		"CompanyName": "Radhi Bidyut Company Ltd"
+	}, {
+		"Symbol": "RJM",
+		"CompanyName": "Raghupati Jute Mills Limited"
+	}, {
+		"Symbol": "RRHP",
+		"CompanyName": "Rairang Hydropower Development Company Ltd."
+	}, {
+		"Symbol": "RBCL",
+		"CompanyName": "Rastriya Beema Company Limited"
+	}, {
+		"Symbol": "RLFL",
+		"CompanyName": "Reliance Finance Ltd."
+	}, {
+		"Symbol": "RHPC",
+		"CompanyName": "Ridi Hydropower Development Company Ltd."
+	}, {
+		"Symbol": "RMDC",
+		"CompanyName": "RMDC Laghubitta Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "RSDC",
+		"CompanyName": "RSDC Laghubitta Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "SIC",
+		"CompanyName": "Sagarmatha Insurance Co. Ltd."
+	}, {
+		"Symbol": "SHBL",
+		"CompanyName": "Sahara Bikas Bank Ltd."
+	}, {
+		"Symbol": "SBBLJ",
+		"CompanyName": "Sahayogi Bikas Bank Limited"
+	}, {
+		"Symbol": "STC",
+		"CompanyName": "Salt Trading Corporation"
+	}, {
+		"Symbol": "SMATA",
+		"CompanyName": "Samata Microfinance Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "SFC",
+		"CompanyName": "Samjhana Finance Co. Ltd."
+	}, {
+		"Symbol": "SLBSL",
+		"CompanyName": "Samudayik Laghubitta Bittiya Sanstha Limited"
+	}, {
+		"Symbol": "SKBBL",
+		"CompanyName": "Sana Kisan Bikas Bank Ltd"
+	}, {
+		"Symbol": "SANIMA",
+		"CompanyName": "Sanima Bank Limited"
+	}, {
+		"Symbol": "SAEF",
+		"CompanyName": "Sanima Equity Fund"
+	}, {
+		"Symbol": "SHPC",
+		"CompanyName": "Sanima Mai Hydropower Ltd."
+	}, {
+		"Symbol": "SKDBL",
+		"CompanyName": "Saptakoshi Development Bank Ltd."
+	}, {
+		"Symbol": "SADBL",
+		"CompanyName": "Shangrila Development Bank Ltd."
+	}, {
+		"Symbol": "SICL",
+		"CompanyName": "Shikhar Insurance Co. Ltd."
+	}, {
+		"Symbol": "SHINE",
+		"CompanyName": "Shine Resunga Development Bank Ltd."
+	}, {
+		"Symbol": "SHIVM",
+		"CompanyName": "SHIVAM CEMENTS LTD"
+	}, {
+		"Symbol": "SBPP",
+		"CompanyName": "Shree Bhrikuti Pulp And Paper Limited"
+	}, {
+		"Symbol": "SIFC",
+		"CompanyName": "Shree Investment Finance Co. Ltd."
+	}, {
+		"Symbol": "SRS",
+		"CompanyName": "Shree Ram Sugar Mills Limited"
+	}, {
+		"Symbol": "SFFIL",
+		"CompanyName": "Shrijana Finance  (Bittaya Sanstha)"
+	}, {
+		"Symbol": "SBL",
+		"CompanyName": "Siddhartha Bank Limited"
+	}, {
+		"Symbol": "SEF",
+		"CompanyName": "Siddhartha Equity Fund"
+	}, {
+		"Symbol": "SEOS",
+		"CompanyName": "Siddhartha Equity Orineted Scheme"
+	}, {
+		"Symbol": "SIL",
+		"CompanyName": "Siddhartha Insurance Ltd."
+	}, {
+		"Symbol": "SINDU",
+		"CompanyName": "Sindhu Bikash Bank Ltd"
+	}, {
+		"Symbol": "SHL",
+		"CompanyName": "Soaltee Hotel Limited"
+	}, {
+		"Symbol": "SCB",
+		"CompanyName": "Standard Chartered Bank Limited"
+	}, {
+		"Symbol": "SMFDB",
+		"CompanyName": "Summit Micro Finance Development Bank Ltd."
+	}, {
+		"Symbol": "SRBL",
+		"CompanyName": "Sunrise Bank Limited"
+	}, {
+		"Symbol": "SMB",
+		"CompanyName": "Support Microfinance Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "SLICL",
+		"CompanyName": "Surya Life Insurance Company Limited"
+	}, {
+		"Symbol": "SLBS",
+		"CompanyName": "Suryodaya Laghubitta Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "SWBBL",
+		"CompanyName": "Swabalamban Laghubitta Bittiya Sanstha Limited"
+	}, {
+		"Symbol": "SDESI",
+		"CompanyName": "Swadeshi Laghubitta Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "SLBBL",
+		"CompanyName": "Swarojgar Laghu Bitta Bikas Bank Ltd."
+	}, {
+		"Symbol": "SYFL",
+		"CompanyName": "Synergy Finance Ltd."
+	}, {
+		"Symbol": "SPDL",
+		"CompanyName": "Synergy Power Development Ltd."
+	}, {
+		"Symbol": "TRH",
+		"CompanyName": "Taragaon Regency Hotel Limited"
+	}, {
+		"Symbol": "TNBL",
+		"CompanyName": "Tinau Development Bank Limited"
+	}, {
+		"Symbol": "UNL",
+		"CompanyName": "Uniliver Nepal Limited"
+	}, {
+		"Symbol": "UFL",
+		"CompanyName": "United Finance Ltd."
+	}, {
+		"Symbol": "UIC",
+		"CompanyName": "United Insurance Co. (Nepal) Ltd."
+	}, {
+		"Symbol": "UMHL",
+		"CompanyName": "United Modi Hydropower Ltd."
+	}, {
+		"Symbol": "UPCL",
+		"CompanyName": "UNIVERSAL POWER COMPANY LTD"
+	}, {
+		"Symbol": "UMB",
+		"CompanyName": "Unnati Micorfinance Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "UPPER",
+		"CompanyName": "Upper Tamakoshi Hydropower Ltd"
+	}, {
+		"Symbol": "VLBS",
+		"CompanyName": "Vijaya laghubitta Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "WDBL",
+		"CompanyName": "Western Development Bank Limited"
+	}, {
+		"Symbol": "WOMI",
+		"CompanyName": "Womi Microfinance Bittiya Sanstha Ltd."
+	}, {
+		"Symbol": "WMBF",
+		"CompanyName": "World Merchant Banking & Finance Ltd."
+	}, {
+		"Symbol": "YHL",
+		"CompanyName": "Yak And Yeti Hotel Limited"
+	},
+	{
+		"Symbol": "ACEDPO",
+		"CompanyName": "ACE Development Bank Limited Promoter Share"
+	}, {
+		"Symbol": "ALDBLP",
+		"CompanyName": "Alpine Development Bank Limited Promoter Share"
+	}, {
+		"Symbol": "APEXPO",
+		"CompanyName": "Apex Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "AMFIPO",
+		"CompanyName": "Arambha Microfinance Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "ARDBLP",
+		"CompanyName": "Araniko Development Bank Limited Promoter Share"
+	}, {
+		"Symbol": "ALICLP",
+		"CompanyName": "Asian Life Insurance Co. Ltd Promoter Share"
+	}, {
+		"Symbol": "BBBLNP",
+		"CompanyName": "Bagheshowari Development Bank  Ltd. Promoer Share"
+	}, {
+		"Symbol": "BGDBLP",
+		"CompanyName": "Bagmati Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "BOKLPO",
+		"CompanyName": "Bank of Kathmandu Limited Promoter Share"
+	}, {
+		"Symbol": "BFCPO",
+		"CompanyName": "Best Finance Co. Limited Promoter Share"
+	}, {
+		"Symbol": "BFCLPO",
+		"CompanyName": "Bhaktapur Finance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "BHBLPO",
+		"CompanyName": "Bhargav Bikash Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "BLDBLP",
+		"CompanyName": "Biratlaxmi Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "BSBLPO",
+		"CompanyName": "Bishwa Bikas Bank Limited Promoter Share"
+	}, {
+		"Symbol": "BUDBLP",
+		"CompanyName": "Business Universal Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "BFLPO",
+		"CompanyName": "Butwal Finance Limited Promoter Share"
+	}, {
+		"Symbol": "CMBFLP",
+		"CompanyName": "Capital Merchant Bank. &amp; Fin. Promoter Share"
+	}, {
+		"Symbol": "CFCLPO",
+		"CompanyName": "Central Finance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "CCBLPO",
+		"CompanyName": "Century Commercial Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "CBBLPO",
+		"CompanyName": "Chhimek Laghubitta Bikas Bank Limited Promoter Share"
+	}, {
+		"Symbol": "ACEDPO",
+		"CompanyName": "ACE Development Bank Limited Promoter Share"
+	},
+	{
+		"Symbol": "ALDBLP",
+		"CompanyName": "Alpine Development Bank Limited Promoter Share"
+	},
+	{
+		"Symbol": "APEXPO",
+		"CompanyName": "Apex Development Bank Ltd. Promoter Share"
+	},
+	{
+		"Symbol": "AMFIPO",
+		"CompanyName": "Arambha Microfinance Bittiya Sanstha Ltd. Promoter Share"
+	},
+	{
+		"Symbol": "ARDBLP",
+		"CompanyName": "Araniko Development Bank Limited Promoter Share"
+	}, {
+		"Symbol": "ALICLP",
+		"CompanyName": "Asian Life Insurance Co. Ltd Promoter Share"
+	}, {
+		"Symbol": "BBBLNP",
+		"CompanyName": "Bagheshowari Development Bank  Ltd. Promoer Share"
+	}, {
+		"Symbol": "BGDBLP",
+		"CompanyName": "Bagmati Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "BOKLPO",
+		"CompanyName": "Bank of Kathmandu Limited Promoter Share"
+	}, {
+		"Symbol": "BFCPO",
+		"CompanyName": "Best Finance Co. Limited Promoter Share"
+	}, {
+		"Symbol": "BFCLPO",
+		"CompanyName": "Bhaktapur Finance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "BHBLPO",
+		"CompanyName": "Bhargav Bikash Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "BLDBLP",
+		"CompanyName": "Biratlaxmi Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "BSBLPO",
+		"CompanyName": "Bishwa Bikas Bank Limited Promoter Share"
+	}, {
+		"Symbol": "BUDBLP",
+		"CompanyName": "Business Universal Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "BFLPO",
+		"CompanyName": "Butwal Finance Limited Promoter Share"
+	}, {
+		"Symbol": "CMBFLP",
+		"CompanyName": "Capital Merchant Bank. &amp; Fin. Promoter Share"
+	}, {
+		"Symbol": "CFCLPO",
+		"CompanyName": "Central Finance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "CCBLPO",
+		"CompanyName": "Century Commercial Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "CBBLPO",
+		"CompanyName": "Chhimek Laghubitta Bikas Bank Limited Promoter Share"
+	}, {
+		"Symbol": "CZBILP",
+		"CompanyName": "Citizens Bank Internatioal Limited Promoter Share"
+	}, {
+		"Symbol": "CEFLPO",
+		"CompanyName": "City Express Finance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "CBLPO",
+		"CompanyName": "Civil Bank Ltd Promoter Share"
+	}, {
+		"Symbol": "CEDBLP",
+		"CompanyName": "Clean Energy Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "CORBLP",
+		"CompanyName": "Corporate Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "CSDBLP",
+		"CompanyName": "Cosmos Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "CNDBLP",
+		"CompanyName": "Country Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "DDBLPO",
+		"CompanyName": "Deprosc LaghuBitta Promoter Share"
+	}, {
+		"Symbol": "DBBLPO",
+		"CompanyName": "Dev BikasBank Ltd. Promoter Share"
+	}, {
+		"Symbol": "EKBLPO",
+		"CompanyName": "Ekata Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "EBLPO",
+		"CompanyName": "Everest Bank Ltd.Promoter"
+	}, {
+		"Symbol": "EFLPO",
+		"CompanyName": "Everest Finance Limited Promoter Share"
+	}, {
+		"Symbol": "EICPO",
+		"CompanyName": "Everest Insurance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "EDBLPO",
+		"CompanyName": "Excel Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "FBBLPO",
+		"CompanyName": "Fewa Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "FMDBLP",
+		"CompanyName": "First Micro Finance Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "GDBLPO",
+		"CompanyName": "Gandaki Bikas Bank Limited Promoter Share"
+	}, {
+		"Symbol": "GBBLPO",
+		"CompanyName": "Garima Bikas Bank Limited Promoter Share"
+	}, {
+		"Symbol": "GABLPO",
+		"CompanyName": "Gaumukhee Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "GSDBLP",
+		"CompanyName": "Gaurishankar Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "GBIMEP",
+		"CompanyName": "Global IME Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "GILBPO",
+		"CompanyName": "Global IME Laghubitta Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "GFCLPO",
+		"CompanyName": "Goodwill Finance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "GBLBSP",
+		"CompanyName": "Grameen Bikas Laghubitta Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "GRANDP",
+		"CompanyName": "Grand Bank Limited Promoter Share"
+	}, {
+		"Symbol": "GRDBLP",
+		"CompanyName": "Green Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "GMFILP",
+		"CompanyName": "Guheyshwori Merchant &amp; Finance Ltd. Promoter Share"
+	}, {
+		"Symbol": "GLICLP",
+		"CompanyName": "Guras Life Insurance Company Ltd. Promoter Share"
+	}, {
+		"Symbol": "GUFLPO",
+		"CompanyName": "Gurkhas Finance  Ltd. Promoter Share"
+	}, {
+		"Symbol": "HAMAPO",
+		"CompanyName": "Hama Merchant &amp; Finance Ltd. Promoter Share"
+	}, {
+		"Symbol": "HAMROP",
+		"CompanyName": "Hamro Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "HATHPO",
+		"CompanyName": "Hathway Finance Company Limited Promoter Share"
+	}, {
+		"Symbol": "HBLPO",
+		"CompanyName": "Himalayan Bank Ltd. Promoter"
+	}, {
+		"Symbol": "HGIPO",
+		"CompanyName": "Himalayan General Insurance Co. Ltd Promoter Share"
+	}, {
+		"Symbol": "ICFCPO",
+		"CompanyName": "ICFC Finance Limited Promotor Share"
+	}, {
+		"Symbol": "ILFCMP",
+		"CompanyName": "ILFCO Microfinance Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "IGIPO",
+		"CompanyName": "IME General Insurance  Ltd. Promoter Share"
+	}, {
+		"Symbol": "IDBLPO",
+		"CompanyName": "Infrastructure Development Bank Limited Promoter Share"
+	}, {
+		"Symbol": "INDBPO",
+		"CompanyName": "Innovative Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "INDBLP",
+		"CompanyName": "International Development Bank Ltd Promoter Share"
+	}, {
+		"Symbol": "ILFCPO",
+		"CompanyName": "International Leasing &amp; Finance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "JFLPO",
+		"CompanyName": "Janaki Finance Limited Promoter Share"
+	}, {
+		"Symbol": "JBNLPO",
+		"CompanyName": "Janata Bank Nepal Ltd. Promoter Share"
+	}, {
+		"Symbol": "JSLBBP",
+		"CompanyName": "Janautthan Samudayic Laghubitta Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "JEFLPO",
+		"CompanyName": "Jebils Finance Ltd. Promoter Share"
+	}, {
+		"Symbol": "JHBLPO",
+		"CompanyName": "Jhimruk Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "JBBLPO",
+		"CompanyName": "Jyoti Bikash  Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "KEBLPO",
+		"CompanyName": "Kabeli BIkas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "KBBLPO",
+		"CompanyName": "Kailash Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "KKBLPO",
+		"CompanyName": "Kakre Bihar Bikash Bank Ltd Promoter Share"
+	}, {
+		"Symbol": "KMCDBP",
+		"CompanyName": "Kalika Laghubitta Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "KCDBLP",
+		"CompanyName": "Kalinchowk Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "KSBBLP",
+		"CompanyName": "Kamana Sewa Bikas Bank Limited Promoter Share"
+	}, {
+		"Symbol": "KADBLP",
+		"CompanyName": "Kanchan Development Bank Limited Promoter Share"
+	}, {
+		"Symbol": "KNBLPO",
+		"CompanyName": "Kankai Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "KRBLPO",
+		"CompanyName": "Karnali Development Bank Limited Promoter Share"
+	}, {
+		"Symbol": "KAFILP",
+		"CompanyName": "Kaski Finanace Ltd. Promoter"
+	}, {
+		"Symbol": "KDBLPO",
+		"CompanyName": "Kasthamandap Dev. Bank Ltd Promoter Share"
+	}, {
+		"Symbol": "KMFLPO",
+		"CompanyName": "Kisan Microfinance Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "KISTPO",
+		"CompanyName": "KIST Bank Limited Promoter Share"
+	}, {
+		"Symbol": "KBLPO",
+		"CompanyName": "Kumari Bank Limited Promotor Share"
+	}, {
+		"Symbol": "LFCPO",
+		"CompanyName": "Lalitpur Finance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "LBLPO",
+		"CompanyName": "Laxmi Bank Limited Promoter Share"
+	}, {
+		"Symbol": "LLBSPO",
+		"CompanyName": "Laxmi Laghubitta Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "LICNPO",
+		"CompanyName": "Life Insurance Co. Nepal Promoter Share"
+	}, {
+		"Symbol": "LUBLPO",
+		"CompanyName": "Lumbini Bank Limited Promotor Share"
+	}, {
+		"Symbol": "LBBLPO",
+		"CompanyName": "Lumbini Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "LFLCPO",
+		"CompanyName": "Lumbini Finance Ltd Promoter Share"
+	}, {
+		"Symbol": "LGILPO",
+		"CompanyName": "Lumbini General Insurance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "MBLPO",
+		"CompanyName": "MachhaPuchhre  Bank Limited Promotor Share"
+	}, {
+		"Symbol": "MFLPO",
+		"CompanyName": "Maha Laxmi Finance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "MBBLPO",
+		"CompanyName": "Mahakali Bikas Bank Ltd. Promoter"
+	}, {
+		"Symbol": "MLBLPO",
+		"CompanyName": "Mahalxmi Bikas Bank Ltd. Promotor Share"
+	}, {
+		"Symbol": "MSMBSP",
+		"CompanyName": "Mahila Sahayatra Microfinance Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "MDBLPO",
+		"CompanyName": "Malika Development Bank Limited Promoter Share"
+	}, {
+		"Symbol": "MSBBLP",
+		"CompanyName": "Manaslu Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "MFILPO",
+		"CompanyName": "Manjushree Finance Ltd. Promoter Share"
+	}, {
+		"Symbol": "MEGAPO",
+		"CompanyName": "Mega  Bank Nepal Ltd. Promoter Share"
+	}, {
+		"Symbol": "MEROPO",
+		"CompanyName": "Mero Microfinance Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "MMFDBP",
+		"CompanyName": "Mirmire Microfinance Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "MIDBLP",
+		"CompanyName": "Mission Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "MDBPO",
+		"CompanyName": "Miteri Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "MLBBLP",
+		"CompanyName": "Mithila LaghuBitta Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "MMDBLP",
+		"CompanyName": "Mount Makalu Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "MNBBLP",
+		"CompanyName": "Muktinath Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "MPFLPO",
+		"CompanyName": "Multipurpose Finance Company  Limited Promoter Share"
+	}, {
+		"Symbol": "NABILP",
+		"CompanyName": "NABIL Bank Limited Promotor Share"
+	}, {
+		"Symbol": "NADEPP",
+		"CompanyName": "Nadep Laghubitta Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "NBBLPO",
+		"CompanyName": "NagBeli LaghuBitta Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "NBSLPO",
+		"CompanyName": "Namaste Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "NNFCPO",
+		"CompanyName": "Narayani National Finance Company Limited Promoter Share"
+	}, {
+		"Symbol": "NLICLP",
+		"CompanyName": "National Life Insurance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "00002",
+		"CompanyName": "National Life Insurance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "NMFBSP",
+		"CompanyName": "National Microfinance Bittiya Sanstha Ltd. Promoter"
+	}, {
+		"Symbol": "NNLBPO",
+		"CompanyName": "Naya Nepal Laghubitta Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "NILPO",
+		"CompanyName": "Neco Insurace Co. Ltd. Promoter"
+	}, {
+		"Symbol": "NABBPO",
+		"CompanyName": "Nepal Aawas Finance Limited Promoter Share"
+	}, {
+		"Symbol": "NBBPO",
+		"CompanyName": "Nepal Bangladesh Bank Limited Promoter Share"
+	}, {
+		"Symbol": "NCDBPO",
+		"CompanyName": "Nepal Community Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "NCCBPO",
+		"CompanyName": "Nepal Credit &amp; Commercial Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "NDBPO",
+		"CompanyName": "Nepal Development Bank Limited Promoter Share"
+	}, {
+		"Symbol": "NEFLPO",
+		"CompanyName": "Nepal Express Finance Limited Promoter Share"
+	}, {
+		"Symbol": "NFSPO",
+		"CompanyName": "Nepal Finance Ltd. Promoter Share"
+	}, {
+		"Symbol": "NHMFPO",
+		"CompanyName": "Nepal Housing &amp; Merchant Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "NICLPO",
+		"CompanyName": "Nepal Insurance Co. Ltd Promoter Share"
+	}, {
+		"Symbol": "NIBPO",
+		"CompanyName": "Nepal Investment Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "NLICP",
+		"CompanyName": "Nepal Life Insurance Co. Ltd. Promoter"
+	}, {
+		"Symbol": "SBIPO",
+		"CompanyName": "Nepal SBI Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "NSEWAP",
+		"CompanyName": "Nepal Seva Laghubitta Bittiya Sanstha Ltd. promoter share"
+	}, {
+		"Symbol": "NSMPO",
+		"CompanyName": "Nepal Share Markets Limited Promoter Share"
+	}, {
+		"Symbol": "NLBBLP",
+		"CompanyName": "Nerude Laghubita Bikas Bank Limited Promoter Share"
+	}, {
+		"Symbol": "NICAP",
+		"CompanyName": "NIC Asia Bank Limted Promoter Share"
+	}, {
+		"Symbol": "NCMPO",
+		"CompanyName": "NIDC Capital Markets Ltd. Promoter Share"
+	}, {
+		"Symbol": "NIDCPO",
+		"CompanyName": "NIDC Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "NUBLPO",
+		"CompanyName": "Nirdhan Utthan Bank Limited Promoter Share"
+	}, {
+		"Symbol": "NLGPO",
+		"CompanyName": "NLG Insurance Company Ltd. Promoter Share"
+	}, {
+		"Symbol": "NMBMFP",
+		"CompanyName": "NMB  Microfinance Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "NMBPO",
+		"CompanyName": "NMB Bank Limited Promoter Share"
+	}, {
+		"Symbol": "ODBLPO",
+		"CompanyName": "Om Development Bank Ltd. Promoter"
+	}, {
+		"Symbol": "OFLPO",
+		"CompanyName": "Om Finance Limited Promoter Share"
+	}, {
+		"Symbol": "PADBLP",
+		"CompanyName": "Pacific Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "PDBLPO",
+		"CompanyName": "Paschimanchal Bikash Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "PFCPO",
+		"CompanyName": "Paschimanchal Finance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "PSDBLP",
+		"CompanyName": "Pashupati Development Bank Limited Promoter Share"
+	}, {
+		"Symbol": "PFLBSP",
+		"CompanyName": "Patan Finance Limited Promoter Share"
+	}, {
+		"Symbol": "PFCLPO",
+		"CompanyName": "Peoples Finance Limited Promoter Share"
+	}, {
+		"Symbol": "PFLPO",
+		"CompanyName": "Pokhara Finance Company Limited Promoter Share"
+	}, {
+		"Symbol": "PRVUPO",
+		"CompanyName": "Prabhu  Bank Limited Promoter Share"
+	}, {
+		"Symbol": "PRFLPO",
+		"CompanyName": "Prabhu Finance Ltd. Promoter Share"
+	}, {
+		"Symbol": "PRINPO",
+		"CompanyName": "Prabhu Insurance Company Ltd. Promoter"
+	}, {
+		"Symbol": "PICPO",
+		"CompanyName": "Premier Insurance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "PCBLP",
+		"CompanyName": "Prime Commercial Bank Promoter Share"
+	}, {
+		"Symbol": "PLICPO",
+		"CompanyName": "Prime Life Insurance Company Limited Promoter Share"
+	}, {
+		"Symbol": "PRDBLP",
+		"CompanyName": "Professional Diyalo Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "PROFLP",
+		"CompanyName": "Progressive Finance Limited Promoter Share"
+	}, {
+		"Symbol": "PFILPO",
+		"CompanyName": "Prudential Finance Co. Ltd. Promoter"
+	}, {
+		"Symbol": "PICLPO",
+		"CompanyName": "Prudential Insurance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "PURBLP",
+		"CompanyName": "Purnima Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "RBBBLP",
+		"CompanyName": "Raptibheri Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "RBCLPO",
+		"CompanyName": "Rastriya Beema Company Limited Promoter Share"
+	}, {
+		"Symbol": "REDBLP",
+		"CompanyName": "Reliable Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "RLFLPO",
+		"CompanyName": "Reliance Finance Ltd. Promoter Share"
+	}, {
+		"Symbol": "RMBFPO",
+		"CompanyName": "Royal Merchant Bank &amp; Finance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "RSDCP",
+		"CompanyName": "RSDC Laghubitta Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "RMDCPO",
+		"CompanyName": "Rural Microfinance Development Centre Ltd. Promoter Share"
+	}, {
+		"Symbol": "SAFLPO",
+		"CompanyName": "Sagarmatha  Finance Limited Promoter Share"
+	}, {
+		"Symbol": "SICPO",
+		"CompanyName": "Sagarmatha Insurance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "SHBLPO",
+		"CompanyName": "Sahara Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "SBBLJP",
+		"CompanyName": "Sahayogi Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "SAJHAP",
+		"CompanyName": "Sajha Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "SMATAP",
+		"CompanyName": "Samata Microfinance Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "SFCPO",
+		"CompanyName": "Samjhana Finace Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "SKBBLP",
+		"CompanyName": "Sana Kisan Bikas Bank Ltd Promoter Share"
+	}, {
+		"Symbol": "SBBLPO",
+		"CompanyName": "Sanima Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "SKDBLP",
+		"CompanyName": "Saptakoshi Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "SETIPO",
+		"CompanyName": "Seti Finance Ltd. Promoter Share"
+	}, {
+		"Symbol": "SEWAPO",
+		"CompanyName": "Sewa Bikas Bank Ltd. Promoter"
+	}, {
+		"Symbol": "SADBLP",
+		"CompanyName": "Shangrila Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "SICLPO",
+		"CompanyName": "Shikhar Insurance Co. Ltd. Promoter"
+	}, {
+		"Symbol": "SHINEP",
+		"CompanyName": "Shine Resunga Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "SIFCPO",
+		"CompanyName": "Shree Investment &amp; Finance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "SFFILP",
+		"CompanyName": "Shrijana Finance Ltd. Promoter Share"
+	}, {
+		"Symbol": "SBLPO",
+		"CompanyName": "Siddhartha Bank Limited Promoter Share"
+	}, {
+		"Symbol": "SDBLPO",
+		"CompanyName": "Siddhartha Development Bank Limited Promoter Share"
+	}, {
+		"Symbol": "SFLPO",
+		"CompanyName": "Siddhartha Finance Ltd. Promoter"
+	}, {
+		"Symbol": "SILPO",
+		"CompanyName": "Siddhartha Insurance Ltd. Promoter Share"
+	}, {
+		"Symbol": "SINDUP",
+		"CompanyName": "Sindhu Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "SODBLP",
+		"CompanyName": "Society  Development Bank Limited Promoter Share"
+	}, {
+		"Symbol": "SCBPO",
+		"CompanyName": "Standard Chartered Bank Limited Promoter Share"
+	}, {
+		"Symbol": "SUBBLP",
+		"CompanyName": "Subbecha Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "SMFDBP",
+		"CompanyName": "Summit Micro Finance Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "SRBLPO",
+		"CompanyName": "Sunrise Bank Ltd Promoter Share"
+	}, {
+		"Symbol": "SUPRMP",
+		"CompanyName": "Supreme Development Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "SLICLP",
+		"CompanyName": "Surya Life Insurance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "SWBBLP",
+		"CompanyName": "Swabalamban Laghubitta Bittiya Sanstha Limited Promoter Share"
+	}, {
+		"Symbol": "SLBBLP",
+		"CompanyName": "Swarojgar Laghu Bitta Bikas Bank Ltd. Promoter Share"
+	}, {
+		"Symbol": "SYFLPO",
+		"CompanyName": "Synergy Finance Ltd. Promoter Share"
+	}, {
+		"Symbol": "TNBLPO",
+		"CompanyName": "Tinau Development Bank Ltd. Promoter"
+	}, {
+		"Symbol": "TDBLPO",
+		"CompanyName": "Tourism Development Bank Ltd. Prmoter Share"
+	}, {
+		"Symbol": "TBBLP",
+		"CompanyName": "Triveni Bikas Bank Ltd Promoter Share"
+	}, {
+		"Symbol": "UFCLPO",
+		"CompanyName": "Union Finance Co. Ltd. Promoter Share"
+	}, {
+		"Symbol": "UFILPO",
+		"CompanyName": "Unique Finance Ltd. Promoter Share"
+	}, {
+		"Symbol": "UFLPO",
+		"CompanyName": "United Finance Company Limited Promoter Share"
+	}, {
+		"Symbol": "UICPO",
+		"CompanyName": "United Insurance Co. (Nepal) Ltd. Promoter Share"
+	}, {
+		"Symbol": "UMBPO",
+		"CompanyName": "Unnnati Microfinance Bittya Shansha Ltd Promoter Share"
+	}, {
+		"Symbol": "VLBSPO",
+		"CompanyName": "Vijaya laghubitta Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "WDBLPO",
+		"CompanyName": "Western Development Bank Limited Promoter Share"
+	}, {
+		"Symbol": "WOMIPO",
+		"CompanyName": "Womi Microfinance Bittiya Sanstha Ltd. Promoter Share"
+	}, {
+		"Symbol": "WMBFPO",
+		"CompanyName": "World Merchant Banking &amp; Finance Limited Promoter Share"
+	},
+	{
+		"Symbol": "000011",
+		"CompanyName": "World Merchant Banking &amp; Finance Limited Promoter Share"
+	}
+]

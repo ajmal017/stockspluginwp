@@ -1786,7 +1786,7 @@ class WP_Admin_UI
 		$sql = "SELECT NS.CompanyName AS 'Company Name', 
 						NSI.CompanySymbol AS 'Symbol', 
 						NS.`transactions` AS 'Transactions',
-						NS.`difference` AS 'Differnece', 
+						NS.`difference` AS 'Difference', 
 						
 						NS.`tradedShares`AS 'Total Traded', 
 						NS.`closingPrice` AS 'Closing Price',
@@ -1925,6 +1925,15 @@ class WP_Admin_UI
 					<input type="button" value="Update front end" class="button" 
 						onclick="document.location='<?php echo $this->var_update(array('action'=>'update_frontEnd')); ?>';" />
 				</div>
+                <?php
+                     $site_url = get_site_url();
+                     $front_end_url = $site_url . '/nepse-live';
+                    
+                ?>
+                <br/>
+                <div id = "update_frontEnd"> 
+                    <a href="<?php echo $front_end_url ?>" target="_blank" style="position:absolute;">Click here to view the Nepse-live page</a>
+                </div>
 			</div>
 	<?php  } ?>
     <form id="posts-filter" action="" method="get">
@@ -2665,28 +2674,35 @@ jQuery(document).ready(function(){
 			
 		}
 		
-		$string = file_get_contents(STOCKSPLUGIN_DIR . 'assets/StockSymbols.json');
+        $string = file_get_contents('http://110.44.126.152/StockSymbols.json');
+        if($string == ''){
+            $string = file_get_contents(STOCKSPLUGIN_DIR . 'assets/StockSymbols.json');
+        }
+		
 		$Companies = json_decode($string, true);
 		$emptyStocksInfoTable = "DELETE FROM wp_nepse_stocks_info";
 		$wpdb->query($emptyStocksInfoTable);
 		
 		foreach($Companies as $Company){
+            $CompanyName = str_replace('&amp;', '&', $Company['CompanyName']);
+            $CompanyName = preg_replace('/\s+/', ' ',$CompanyName);
 			$INSERTStocks_Details = "INSERT INTO wp_nepse_stocks_info 
 					 (`CompanyName`, `CompanySymbol`
 					  ) 
 					VALUES 
-					  ('".$Company['CompanyName']."', '".$Company['Symbol']."'
+					  ('".$CompanyName."', '".$Company['Symbol']."'
 					  )
 					";				
 			$wpdb->query($INSERTStocks_Details);
 		}
 	}
-	
+
+    	
 	function UpdatefrontEnd(){
 		global $wpdb;
 				
 		$sql = "Select id
-				FROM wp_posts WHERE post_title = 'stockspluginwp'";
+				FROM wp_posts WHERE post_title = 'nepse-live'";
 		$results = $wpdb->get_results($sql);
 		
 		if($results[0]->id > 0){
@@ -2695,7 +2711,7 @@ jQuery(document).ready(function(){
 		print_r($results[0]->id);
 		
 		$stockPlugin_post = array(
-						  'post_title'    => 'stockspluginwp',
+						  'post_title'    => 'nepse-live',
 						  'post_content'  => "<div id='stkMarqueee'>
 												[stocksInfoMarquee]
 												</div>
@@ -2711,7 +2727,7 @@ jQuery(document).ready(function(){
 						  'post_modified' => date("Y-m-d H:i:s"),
 						  'post_modified_gmt' => date("Y-m-d H:i:s"),
 						  'menu_order'		  => '0',
-						  'post_name'		  => 'stockspluginwp',
+						  'post_name'		  => 'nepse-live',
 						  'post_type'		  => 'page'
 						);
 		
