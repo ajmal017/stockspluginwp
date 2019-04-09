@@ -147,7 +147,7 @@ function get_stocksData(){
 				LEFT JOIN wp_nepse_stocks_info NSI
 					ON NS.CompanyName = NSI.CompanyName
 					
-				WHERE 1";
+				WHERE 1 ORDER BY  NSI.CompanySymbol";
 	$results = $wpdb->get_results($sql);
 	return ($results );
 	
